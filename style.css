@@ -711,6 +711,12 @@ section.author .content  > .left .name {
     line-height: 125%;
     text-transform: uppercase;
 }
+.title {
+    font-family: 'Benzin Family', sans-serif !important;
+    line-height: 125% !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+}
 section.author .content  > .left .list {
     padding: 1.5rem 3rem 1.5rem 1.5rem;
     background: #FFE500;
