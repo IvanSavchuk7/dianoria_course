@@ -117,19 +117,24 @@ section.hero > .offer {
 section.hero > .offer > div {
     flex: 1;
 }
-section.hero > .offer .inner {
+section.hero > .offer .inner,
+section.form .inner {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-section.hero > .offer .inner .text {
+section.hero > .offer .inner .text,
+section.form .inner .text{
     font-size: 1.5rem;
     font-weight: 600;
 }
-section.hero > .offer .inner .text span {
+section.hero > .offer .inner .text span,
+section.for .container > div .text span,
+section.results > .title div:first-child {
     color: #FFE500;
 }
-section.hero > .offer .inner .bonus-wrapper {
+section.hero > .offer .inner .bonus-wrapper,
+section.form .inner .bonus-wrapper{
     display: flex;
     gap: 1.5rem;
     padding: 1.5rem 2rem 1.5rem 10rem;
@@ -142,20 +147,24 @@ section.hero > .offer .inner .bonus-wrapper {
     background-size: contain;
     background-position: center left;
 }
-section.hero > .offer .inner .bonus-wrapper img {
+section.hero > .offer .inner .bonus-wrapper img,
+section.form .inner .bonus-wrapper img {
     width: 10rem;
     height: auto;
 }
-section.hero > .offer .inner .bonus-wrapper > div {
+section.hero > .offer .inner .bonus-wrapper > div,
+section.form .inner .bonus-wrapper > div > div {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
-section.hero > .offer .inner .bonus-wrapper > div > p:first-child {
+section.hero > .offer .inner .bonus-wrapper > div > p:first-child,
+section.form .inner .bonus-wrapper > div > p:first-child {
     color: #B1B1B1;
     font-size: .9rem;
 }
-section.hero > .offer .inner .bonus-wrapper > div > p:last-child {
+section.hero > .offer .inner .bonus-wrapper > div > p:last-child,
+section.form .inner .bonus-wrapper > div > p:last-child {
     font-size: 1.1rem;
     font-weight: 700;
 }
@@ -214,12 +223,17 @@ section.hero > .offer .inner .bonus-wrapper > div > p:last-child {
     position:relative;
 }
 .form-card__input-wrap::before{
-    content:"🇺🇦";
-    position:absolute;
-    left:16px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size: 1.3rem;
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.7rem;
+    height: 1.7rem;
+    background-image: url("assets/images/ukraine.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .form-card__input-wrap input{
     width:100%;
@@ -237,7 +251,7 @@ a {
     border:0;
     cursor:pointer;
     width:100%;
-    padding:1rem 3rem;
+    padding:1rem 1rem;
     display: flex;
     justify-content: center;
     border-radius: 16px;
@@ -269,8 +283,7 @@ a {
 .form-card__avatars img{
     width:2rem;
     height:2rem;
-    border-radius:50%;
-    border:2px solid #1b1c22;
+
     object-fit:cover; margin-left:-.8rem;
 }
 .form-card__avatars img:first-child{ margin-left:0 }
@@ -354,7 +367,8 @@ section.course {
 }
 section.course > .title,
 section.for > .title,
-section.feedback > .title {
+section.feedback > .title,
+section.results > .title {
     font-size: 2.8rem;
     font-weight: 800;
     font-family: 'Benzin Family', sans-serif;
@@ -464,23 +478,24 @@ section.for .container > div .text {
     font-weight: 600;
     text-align: center;
 }
-section.for .container > div .text span {
-    color: #FFE500;
-}
+
 section.feedback {
     padding: 2rem 4rem;
     background-image: url("assets/images/noise-bg.png"), url("assets/images/feedback-bg.png");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
-section.feedback .content {
+section.feedback .content,
+section.results .content{
     position: relative;
 }
-section.feedback .feedback-swiper {
+section.feedback .feedback-swiper,
+section.results .results-swiper {
     width: calc(100% - 5rem);
     position: initial;
 }
-section.feedback .feedback-swiper .swiper-slide {
+section.feedback .feedback-swiper .swiper-slide,
+section.results .results-swiper .swiper-slide {
     padding: 1rem 2rem;
     border-radius: 16px;
     border: 1px solid #575757;
@@ -494,19 +509,16 @@ section.feedback .feedback-swiper .swiper-slide {
 .swiper-backface-hidden .swiper-slide {
     transition: all .7s ease;
 }
-.feedback-swiper .swiper-slide .name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.feedback-swiper .swiper-slide img {
+.feedback-swiper .swiper-slide img,
+.results-swiper .swiper-slide img {
     max-width: 100%;
 }
 .swiper-slide.swiper-slide-active {
     transition: all .7s ease;
     opacity: 1 !important;
 }
-.feedback-swiper .swiper-button-next,.feedback-swiper .swiper-button-prev {
+.feedback-swiper .swiper-button-next,.feedback-swiper .swiper-button-prev,
+.results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;
@@ -527,6 +539,327 @@ section.feedback .feedback-swiper .swiper-slide {
     width: 1.5rem !important;
     height: 1.5rem !important;
 }
+section.stats {
+    padding: 4rem 4rem;
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/stats-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.stats .content {
+    display: flex;
+    align-items: center;
+}
+section.stats .content > div {
+    flex: 2;
+}
+section.stats .content  > .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 3;
+}
+section.stats .content  > .left .title {
+    font-size: 3.5rem;
+    font-family: "Benzin Family", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+section.stats .content  > .left .bottom {
+    font-size: .9rem;
+    color: #B1B1B1;
+}
+section.stats .content  > .left .title > div:first-child,
+section.stats .content  > .left .tooltip span,
+section.stats .content  > .right .tooltip span,
+section.stats .content  > .right .nums .left {
+    color: #FFE500;
+}
+section.stats .content  > .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 19.5px;
+    padding: 1.5rem;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(36px);
+}
+section.stats .content  > .right .tooltip {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+section.stats .content  > .right > .img-wrapper img {
+    width: 100%;
+}
+section.stats .content  > .right .nums .left {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+section.stats .content  > .right .nums {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+}
+section.stats .content  > .right .nums > div {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    border-radius: 12px;
+    background: #181818;
+    padding: .6rem 1rem;
+}
+section.stats .content  > .right .nums > .right {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section.stats .content > .right .nums .left,
+section.stats .content > .right .nums .right {
+    flex: 0 0 auto;
+}
+section.stats .content > .right .nums .separator {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+section.stats .content > .right .nums .separator img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+br.mobile {
+    display: none;
+}
+section.results {
+    padding: 2rem 4rem;
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/results-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.results .swiper-wrapper .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+section.results .feedback-swiper .swiper-slide {
+    padding: 0;
+}
+section.results .swiper-wrapper .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+section.results .swiper-wrapper .card > .name {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+section.results .swiper-wrapper .card > .text {
+    color: #B1B1B1;
+}
+section.results .swiper-button-prev {
+    left: 1.25rem !important;
+}
+section.results .swiper-button-next {
+    right: 1.25rem !important;
+}
+section.author {
+    padding: 2rem 4rem;
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/author-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.author .content {
+    display: flex;
+    gap: 1rem;
+}
+section.author .content > div {
+    flex: 1;
+}
+section.author .content  > .left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.author .content  > .left .tooltip {
+    border-radius: 100px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(4px);
+    padding: .5rem 2rem;
+    width: fit-content;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+section.author .content  > .left .name {
+    color: #FFE500;
+    font-size: 3rem;
+    font-family: "Benzin Family", sans-serif;
+    font-weight: 800;
+    line-height: 125%;
+    text-transform: uppercase;
+}
+section.author .content  > .left .list {
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    background: #FFE500;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 20px;
+    width: fit-content;
+}
+section.author .content  > .left .list > .item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+section.author .content  > .left .list > .item div {
+    color: #1b1c22;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+section.author .content  > .left .list > .item img {
+    width: 2rem;
+    height: 2rem;
+    min-width: 2rem;
+}
+section.author .content  > .right {
+    position: relative;
+}
+section.author .content  > .right > .img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url("assets/images/author.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+section.author .content  > .right > .img-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+section.author .content  > .right .partners {
+    position: absolute;
+    width: 90%;
+    padding: 1.5rem;
+    height: fit-content;
+    bottom: -1px;
+    left: 52%;
+    transform: translateX(-50%);
+    z-index: 10;
+    border-radius: 20px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.author .content  > .right .partners .text {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+section.author .content  > .right .partners .wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+section.author .content  > .right .partners .wrapper img {
+    height: 1.7rem;
+    width: auto;
+}
+section.form {
+    padding: 2rem 4rem;
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/form-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.form .content {
+    padding: 2rem;
+    background: #FFE500;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 24px;
+}
+section.form .content > div {
+    flex: 1;
+}
+section.form .content > .left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.form .content > .left .title {
+    font-size: 2.5rem;
+    color: #1b1c22;
+    font-family: "Benzin Family", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+section.form .content > .left .text {
+    font-size: 1.2rem;
+    color: #1b1c22;
+    font-weight: 500;
+}
+section.form .form-card {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+section.form .form-card__cta {
+    border-radius: 16px;
+    color: #fff;
+    background: #181818;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.28) inset;
+}
+section.form .form-card__note b,
+section.form .form-card__note {
+    color: #1b1c22;
+}
+section.form .form-card__input-wrap {
+    margin: 0 0 1.5rem 0;
+}
+section.form .inner {
+    width: fit-content;
+    margin: auto;
+}
+section.form .inner .bonus-wrapper {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 1.5rem 1.5rem 1.5rem 10rem;
+    flex-direction: column;
+}
+section.form .inner .bonus-wrapper > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 5rem;
+}
+section.form .inner .bonus-wrapper > div:last-child {
+    display: flex;
+    gap: 1rem;
+}
+section.form .inner .bonus-wrapper > div:last-child > div {
+    padding: .5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(19.046483993530273px);
+    color: #FFE500;
+    font-size: .8rem;
+    font-weight: 600;
+}
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
@@ -534,7 +867,12 @@ section.feedback .feedback-swiper .swiper-slide {
     }
     section.hero,
     section.offer-yellow,
-    section.course {
+    section.course,
+    section.feedback,
+    section.stats,
+    section.results,
+    section.author,
+    section.form {
         padding: 5rem 20%;
     }
     section.offer-yellow {
@@ -551,7 +889,12 @@ section.feedback .feedback-swiper .swiper-slide {
     section.hero,
     section.offer-yellow,
     section.course,
-    section.for {
+    section.for,
+    section.feedback,
+    section.stats,
+    section.results,
+    section.author,
+    section.form {
         padding: 4rem 10%;
     }
     section.offer-yellow {
@@ -580,7 +923,19 @@ section.feedback .feedback-swiper .swiper-slide {
         background-size: 100% 100%, 50% auto, 75% auto, 100% 100%;
         background-position: center, top right, right bottom, center;
     }
-
+    section.results .results-swiper .swiper-slide {
+        padding: 1rem 1.25rem;
+    }
+    .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    section.results .swiper-button-next {
+        right: .75rem !important;
+    }
+    section.results .swiper-button-prev {
+        left: .75rem !important;
+    }
 }
 @media only screen and (min-width: 830px) and (max-width: 1023px) {
     html {
@@ -593,14 +948,32 @@ section.feedback .feedback-swiper .swiper-slide {
     }
     section.offer-yellow,
     section.course,
-    section.for  {
-        padding: 1rem 1.5rem;
+    section.for,
+    section.feedback,
+    section.stats,
+    section.results,
+    section.author,
+    section.form {
+        padding: 3rem 1.5rem;
     }
     section.offer-yellow {
         padding-top: 0;
     }
     section.hero {
         padding-bottom: 2rem;
+    }
+    section.results .results-swiper .swiper-slide {
+        padding: 1rem;
+    }
+    .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+    section.results .swiper-button-next {
+        right: .75rem !important;
+    }
+    section.results .swiper-button-prev {
+        left: .75rem !important;
     }
 }
 @media only screen and (max-width: 829px) {
@@ -619,9 +992,21 @@ section.feedback .feedback-swiper .swiper-slide {
     }
     section.offer-yellow,
     section.course,
-    section.for {
-        padding: 3rem 10%;
+    section.for,
+    section.feedback,
+    section.stats,
+    section.results,
+    section.form {
+        padding: 5rem 10%;
     }
+    section.results,
+    section.feedback {
+        padding: 5rem 3rem;
+    }
+    section.results .results-swiper {
+        width: 100%;
+    }
+
     section.offer-yellow {
         padding-top: 0;
     }
@@ -718,6 +1103,69 @@ section.feedback .feedback-swiper .swiper-slide {
         font-size: .8rem;
         padding: 1rem;
     }
+    section.stats .content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    section.stats .content > .right {
+        padding: 3rem;
+        gap: 2rem;
+        width: 90%;
+    }
+    section.for > .title {
+        font-size: 2.5rem;
+    }
+    .feedback-swiper .swiper-button-next,
+    .feedback-swiper .swiper-button-prev,
+    .results-swiper .swiper-button-next,
+    .results-swiper .swiper-button-prev {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    section.results .swiper-button-prev {
+        left: -1.5rem !important;
+    }
+    section.results .swiper-button-next {
+        right: -1.5rem !important;
+    }
+    section.results .results-swiper .swiper-slide  {
+        padding: 0;
+    }
+    section.author .content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    section.author .content > .left .name {
+        font-size: 3.5rem;
+    }
+    section.author .content > .left .list > .item div {
+        font-size: 1.5rem;
+    }
+    section.author .content > .right .partners {
+        width: 100%;
+        padding: 2rem;
+    }
+    section.form .content {
+        flex-direction: column;
+    }
+
+    section.form .inner .bonus-wrapper {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 1rem;
+        background-position: 0 100%;
+        background-size: auto 80%;
+    }
+    section.form .inner .bonus-wrapper > div:last-child {
+        flex-wrap: wrap;
+    }
+    section.form .inner .bonus-wrapper > div:first-child {
+        padding-right: 0;
+    }
+    section.form .inner .bonus-wrapper > div > p:last-child {
+        font-size: .9rem;
+    }
 }
 @media only screen and (max-width: 599px) {
     html {
@@ -726,8 +1174,19 @@ section.feedback .feedback-swiper .swiper-slide {
     section.hero,
     section.offer-yellow,
     section.course,
-    section.for {
-        padding: 3rem 1rem;
+    section.for,
+    section.feedback,
+    section.stats,
+    section.author,
+    section.form {
+        padding: 3.5rem 1rem;
+    }
+
+    section.results {
+        padding: 5rem 0 5rem 1rem;
+    }
+    section.results .results-swiper {
+        width: 100%;
     }
     section.course > .title {
         font-size: 2.25rem;
@@ -759,13 +1218,53 @@ section.feedback .feedback-swiper .swiper-slide {
         padding: 1rem;
     }
     .swiper-button-next, .swiper-button-prev {
-        top: calc(100% + 3rem) !important;
+        top: calc(100% + 4rem) !important;
+        width: 3.5rem !important;
+        height: 3.5rem !important;
     }
-    .swiper-button-prev {
-        left: calc(50% - 3rem) !important;
+    section.feedback .swiper-button-prev,
+    section.results .swiper-button-prev {
+        left: calc(50% - 4rem) !important;
     }
-    .swiper-button-next {
-        right: calc(50% - 3rem) !important;
+    section.feedback .swiper-button-next,
+    section.results .swiper-button-next  {
+        right: calc(50% - 4rem) !important;
+    }
+    section.stats .content > .right {
+        width: 100%;
+    }
+    section.for .title br.mobile {
+        display: block;
+    }
+    section.for .title br:not(.mobile) {
+        display: none;
+    }
+    section.results a {
+        margin: 8rem auto 2rem auto
+    }
+    section.author .content > .left .name {
+        font-size: 3rem;
+    }
+    section.author .content > .left .list > .item div {
+        font-size: 1.25rem;
+    }
+    section.author .content > .left .list > .item div br {
+        display: none;
+    }
+    section.author .content > .right .partners {
+        width: 100%;
+        padding: 1.25rem;
+        left: 0;
+        transform: translateX(0);
+    }
+    section.form .content {
+        padding: 2rem;
+    }
+    section.form .form-card {
+        padding: 1rem 0;
+    }
+    section.form .content .right {
+        width: 100%;
     }
 }
 @media only screen and (max-width: 480px) {
@@ -805,6 +1304,19 @@ section.feedback .feedback-swiper .swiper-slide {
     section.offer-yellow .content > div img {
         height: 2.75rem;
         width: 2.75rem;
+    }
+    section.stats .content .left > .title {
+        font-size: 3rem;
+    }
+    section.for > .title {
+        font-size: 2.15rem;
+    }
+    section.form .inner .bonus-wrapper > div:last-child > div {
+        font-size: .8rem;
+        padding: .5rem;
+    }
+    section.form .content > .left .title {
+        font-size: 2.15rem;
     }
 }
 @media only screen and (max-width: 420px) {
