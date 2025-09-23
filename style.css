@@ -1482,10 +1482,10 @@ section.course .content .d img:not(.mobile) {
     }
     section.author .content > .left .name,
     section.results > .title > div {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
     section.form .content > .left .title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 }
 @media only screen and (max-width: 375px) {
