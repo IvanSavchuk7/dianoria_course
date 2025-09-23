@@ -68,6 +68,15 @@ var swiper2 = new Swiper(".results-swiper", {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("header-form");
 
+    const urlParams = new URLSearchParams(window.location.search);
+    ["utm_source", "utm_campaign", "utm_content", "utm_term"].forEach(param => {
+        const value = urlParams.get(param);
+        if (value) {
+            const hiddenInput = document.querySelector(`input[name="${param}"]`);
+            if (hiddenInput) hiddenInput.value = value;
+        }
+    });
+
     form.addEventListener("submit", function (e) {
         e.preventDefault();
         const submitBtn = document.getElementById("submit-btn-1");
