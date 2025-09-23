@@ -1303,7 +1303,7 @@ section.course .content .d img:not(.mobile) {
         gap: 1rem;
     }
     section.hero .form img.mobile {
-        width: 80%;
+        width: 90%;
         display: block;
         margin: -1.5rem auto 0 auto;
     }
