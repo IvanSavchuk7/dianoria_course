@@ -12,6 +12,7 @@ html {
     font-size: 20px;
     background: #181818;
     scroll-behavior: smooth;
+    font-synthesis: none;
 }
 body {
     transition: opacity 0.3s ease;
@@ -20,6 +21,9 @@ body.loading {
     pointer-events: none;
     overflow: hidden;
 }
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
 html main {
     overflow: hidden;
 }
@@ -877,6 +881,9 @@ section.form .inner .bonus-wrapper > div:last-child > div {
 @keyframes rotate {
     100% { transform: rotate(360deg); }
 }
+section.course .content .d img:not(.mobile) {
+    display: none;
+}
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
@@ -1014,7 +1021,7 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.stats,
     section.results,
     section.form {
-        padding: 5rem 10%;
+        padding: 2rem 10%;
     }
     section.results,
     section.feedback {
@@ -1077,12 +1084,6 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.hero header {
         gap: 2rem;
     }
-    section.offer-yellow .content {
-        gap: 1.5rem;
-        padding-bottom: 8rem;
-        background-size: auto 10rem;
-        background-position: center bottom;
-    }
     section.offer-yellow .content > div p {
         font-size: 1rem;
     }
@@ -1095,12 +1096,16 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     }
     section.course .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
         grid-template-areas:
     "a"
     "b"
     "c"
     "d";
+        grid-auto-rows: initial;
+    }
+    section.course .content .d img.mobile {
+        display: block;
     }
     section.course .container br {
         display: none;
@@ -1183,6 +1188,12 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.form .inner .bonus-wrapper > div > p:last-child {
         font-size: .9rem;
     }
+    section.offer-yellow .content {
+        padding: 2rem 1.5rem 6rem 1.5rem;
+        background-size: auto 8rem;
+        background-position: center bottom;
+        gap: 1.25rem;
+    }
 }
 @media only screen and (max-width: 599px) {
     html {
@@ -1196,9 +1207,12 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.stats,
     section.author,
     section.form {
-        padding: 3.5rem 1rem;
+        padding: 2.5rem 1rem;
     }
-
+    section.offer-yellow {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     section.results {
         padding: 5rem 0 5rem 1rem;
     }
@@ -1214,7 +1228,8 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     }
     section.for > .content > .container {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: auto;
+        gap: 1.5rem;
         grid-template-areas:
             "."
             "."
@@ -1283,18 +1298,60 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.form .content .right {
         width: 100%;
     }
+    section.hero {
+        padding-top: 1rem;
+        gap: 1rem;
+    }
+    section.hero .form img.mobile {
+        width: 80%;
+        display: block;
+        margin: -1.5rem auto 0 auto;
+    }
+    section.hero header {
+        padding: .5rem 3rem;
+    }
+    section.course .container {
+        gap: 1.5rem;
+    }
+    section.author .content > .left .list {
+        gap: 1rem;
+    }
+    section.author .content > .right > .img-wrapper {
+        background-image: none;
+    }
+    section.author .content > .right > .img-wrapper img {
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
 }
 @media only screen and (max-width: 480px) {
     section.hero .title br.mobile {
         display: block;
     }
     section.hero .title > .title-text > div:first-child {
-        font-size: 5rem;
+        font-size: 4rem;
         text-align: center;
     }
     section.hero .title > .title-text > div {
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
+    }
+    section.hero .title > .tooltip > .img-wrapper {
+        padding: .5rem;
+    }
+    section.hero .title > .tooltip > .img-wrapper svg {
+        width: 32px;
+        height: 32px;
+    }
+    .form-card__cta {
+        padding: .75rem 1rem;
+    }
+    .form-card__input-wrap {
+        margin: 1rem 0 1rem;
+    }
+    section.author .content > .right .partners .wrapper img {
+        height: 1.5rem;
     }
     section.hero .form > form {
         margin-top: -13.5rem;
@@ -1353,6 +1410,9 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
         width: 3.7rem !important;
         height: 3.7rem !important;
+    }
+    section.form .inner .bonus-wrapper > div:last-child {
+        margin-left: 2rem;
     }
     .form-card__input-wrap {
         padding-left: 3.5rem;
