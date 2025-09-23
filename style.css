@@ -1477,13 +1477,15 @@ section.course .content .d img:not(.mobile) {
         padding-left: 8.5rem;
     }
     section.course > .title > div,
-    section.for > .title > div,
-    section.results > .title > div,
-    section.author .content > .left .name {
+    section.for > .title > div {
         font-size: 1.75rem;
     }
-    section.author .content > .left .name {
+    section.author .content > .left .name,
+    section.results > .title > div {
         font-size: 2.5rem;
+    }
+    section.form .content > .left .title {
+        font-size: 2.25rem;
     }
 }
 @media only screen and (max-width: 375px) {
