@@ -5,6 +5,7 @@
     url('assets/fonts/Benzin-Bold.woff') format('woff'),
     url('assets/fonts/Benzin-Bold.ttf') format('truetype');
     font-weight: 700;
+    font-display: swap;
 }
 
 html {
@@ -372,16 +373,21 @@ section.course {
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
-section.course > .title,
-section.for > .title,
+section.course > .title > div,
+section.for > .title > div,
 section.feedback > .title,
-section.results > .title {
+section.results > .title > div {
     font-size: 2.8rem;
     font-family: 'Benzin Family', sans-serif;
     font-weight: 700;
     line-height: 118%;
     text-transform: uppercase;
     text-align: center;
+}
+section.course > .title,
+section.for > .title,
+section.feedback > .title,
+section.results > .title {
     margin-bottom: 2rem;
 }
 section.course .title > div:last-child {
@@ -565,7 +571,7 @@ section.stats .content  > .left {
     gap: 1rem;
     flex: 3;
 }
-section.stats .content  > .left .title {
+section.stats .content  > .left .title > div {
     font-size: 3.5rem;
     font-family: 'Benzin Family', sans-serif;
     font-weight: 700;
@@ -1139,7 +1145,7 @@ section.course .content .d img:not(.mobile) {
         gap: 2rem;
         width: 90%;
     }
-    section.for > .title {
+    section.for > .title > div {
         font-size: 2.5rem;
     }
     .feedback-swiper .swiper-button-next,
@@ -1198,6 +1204,14 @@ section.course .content .d img:not(.mobile) {
         background-position: center bottom;
         gap: 1.25rem;
     }
+    section.stats .content > .left .title > div,
+    section.course > .title > div {
+        font-size: 2.25rem;
+    }
+    section.for > .title > div br:not(.mobile) {
+        display: none;
+    }
+
 }
 @media only screen and (max-width: 599px) {
     html {
@@ -1223,7 +1237,7 @@ section.course .content .d img:not(.mobile) {
     section.results .results-swiper {
         width: 100%;
     }
-    section.course > .title {
+    section.course > .title > div {
         font-size: 2.25rem;
     }
     .form-card__cta svg, a svg {
@@ -1299,6 +1313,9 @@ section.course .content .d img:not(.mobile) {
     section.form .form-card {
         padding: 1rem 0;
     }
+    section.for > .title > div {
+        font-size: 2.25rem;
+    }
     section.form .content .right {
         width: 100%;
     }
@@ -1327,6 +1344,9 @@ section.course .content .d img:not(.mobile) {
         width: 80%;
         display: block;
         margin: auto;
+    }
+    section.results > .title > div {
+        font-size: 2.5rem;
     }
 }
 @media only screen and (max-width: 480px) {
@@ -1383,21 +1403,25 @@ section.course .content .d img:not(.mobile) {
         height: 2.75rem;
         width: 2.75rem;
     }
-    section.stats .content .left > .title {
-        font-size: 3rem;
+    section.stats .content .left > .title > div {
+        font-size: 2.5rem;
         font-family: 'Benzin Family', sans-serif;
         font-weight: 700;
         line-height: 118%;
         text-transform: uppercase;
+
     }
-    section.for > .title {
-        font-size: 2.15rem;
+    section.results > .title > div {
+        font-size: 2.25rem;
+    }
+    section.for > .title > div {
+        font-size: 1.8rem;
     }
     section.form .inner .bonus-wrapper > div:last-child > div {
         font-size: .8rem;
         padding: .5rem;
     }
-    section.form .content > .left .title {
+    section.form .content > .left .title > div {
         font-size: 2.15rem;
     }
     a {
@@ -1451,6 +1475,15 @@ section.course .content .d img:not(.mobile) {
     section.form .inner .bonus-wrapper {
         background-size: auto 65%;
         padding-left: 8.5rem;
+    }
+    section.course > .title > div,
+    section.for > .title > div,
+    section.results > .title > div,
+    section.author .content > .left .name {
+        font-size: 1.75rem;
+    }
+    section.author .content > .left .name {
+        font-size: 2.5rem;
     }
 }
 @media only screen and (max-width: 375px) {

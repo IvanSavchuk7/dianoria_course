@@ -138,16 +138,3 @@ window.onload = function () {
     document.body.style.opacity = '1';
     document.body.classList.remove('loading');
 };
-
-document.documentElement.classList.add('fonts-loading');
-if ('fonts' in document) {
-    document.fonts.ready.then(() => {
-        document.documentElement.classList.remove('fonts-loading');
-        document.documentElement.classList.add('fonts-ready');
-    });
-} else {
-    window.addEventListener('load', () => {
-        document.documentElement.classList.remove('fonts-loading');
-        document.documentElement.classList.add('fonts-ready');
-    });
-}
