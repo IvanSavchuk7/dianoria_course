@@ -64,3 +64,63 @@ var swiper2 = new Swiper(".results-swiper", {
         },
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("header-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById("submit-btn-1");
+
+
+        const formData = new FormData(form);
+
+        fetch("https://script.google.com/macros/s/AKfycbwu3IUA-HvLVrujAtZt2n8aQg8_osF71UGobFxpaYSc20Rdp_magBiJTXnbVWBhf6hO/exec", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    setTimeout(() => {
+                        window.location.href = "https://google.com";
+                    }, 100);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again later.");
+            });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById("submit-btn-2");
+
+
+        const formData = new FormData(form);
+
+        fetch("https://script.google.com/macros/s/AKfycbwu3IUA-HvLVrujAtZt2n8aQg8_osF71UGobFxpaYSc20Rdp_magBiJTXnbVWBhf6hO/exec", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === "success") {
+                    setTimeout(() => {
+                        window.location.href = "https://google.com";
+                    }, 100);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong. Please try again later.");
+            });
+    });
+});
+
+

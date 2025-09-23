@@ -40,12 +40,12 @@ section.hero {
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 4rem;
-    min-height: 95vh;
+
     background-image:
         url("assets/images/noise-bg.png"),
-        url("assets/images/hero-bg.png"),
-        url("assets/images/graffity-bg.png"),
-        url("assets/images/blur-bg.png");
+        url("assets/images/hero-bg.webp"),
+        url("assets/images/graffity-bg.webp"),
+        url("assets/images/blur-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, contain, 75% auto, 100% 100%;
     background-position: center, bottom right, right bottom, center;
@@ -361,7 +361,7 @@ section.offer-yellow .content > div p {
 }
 section.course {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/course-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/course-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -442,7 +442,7 @@ section.course .container > .b img {
 }
 section.for {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/for-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/for-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -481,7 +481,7 @@ section.for .container > div .text {
 
 section.feedback {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/feedback-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/feedback-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -541,7 +541,7 @@ section.results .results-swiper .swiper-slide {
 }
 section.stats {
     padding: 4rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/stats-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/stats-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -637,7 +637,7 @@ br.mobile {
 }
 section.results {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/results-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/results-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -672,7 +672,7 @@ section.results .swiper-button-next {
 }
 section.author {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/author-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/author-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -738,7 +738,7 @@ section.author .content  > .right > .img-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: url("assets/images/author.png");
+    background-image: url("assets/images/author.webp");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -779,7 +779,7 @@ section.author .content  > .right .partners .wrapper img {
 }
 section.form {
     padding: 2rem 4rem;
-    background-image: url("assets/images/noise-bg.png"), url("assets/images/form-bg.png");
+    background-image: url("assets/images/noise-bg.png"), url("assets/images/form-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
 }
@@ -859,6 +859,23 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     color: #FFE500;
     font-size: .8rem;
     font-weight: 600;
+}
+.loader {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+.spinner {
+    animation: rotate 1s linear infinite;
+    width: 100%;
+    height: 100%;
+}
+.path {
+    stroke: #fff;
+    stroke-linecap: round;
+}
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
 }
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
@@ -985,8 +1002,8 @@ section.form .inner .bonus-wrapper > div:last-child > div {
         align-items: center;
         background-image:
                 url("assets/images/noise-bg.png"),
-                url("assets/images/graffity-bg.png"),
-                url("assets/images/blur-bg.png");
+                url("assets/images/graffity-bg.webp"),
+                url("assets/images/blur-bg.webp");
         background-size: 100% 100%, 100% auto, 100% 100%;
         background-position: center, right bottom, center;
     }
@@ -1307,6 +1324,8 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     }
     section.stats .content .left > .title {
         font-size: 3rem;
+        font-family: "Benzin Family", sans-serif;
+        font-weight: 800;
     }
     section.for > .title {
         font-size: 2.15rem;
@@ -1318,10 +1337,29 @@ section.form .inner .bonus-wrapper > div:last-child > div {
     section.form .content > .left .title {
         font-size: 2.15rem;
     }
+    a {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .form-card__cta svg, a svg {
+        width: 32px;
+        height: 32px;
+    }
+    .form-card__cta svg {
+        width: 28px;
+        height: 28px;
+    }
+    .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
+        width: 3.7rem !important;
+        height: 3.7rem !important;
+    }
+    .form-card__input-wrap {
+        padding-left: 3.5rem;
+    }
 }
 @media only screen and (max-width: 420px) {
     html {
-        font-size: 13px;
+        font-size: 14px;
     }
     section.hero .title > .title-text > div:first-child {
         font-size: 4.75rem;
