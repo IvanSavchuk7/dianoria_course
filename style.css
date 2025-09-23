@@ -266,7 +266,7 @@ a {
     font-size: 1rem;
     text-transform:uppercase;
     position:relative;
-    font-family: "Benzin Family", sans-serif;
+    font-family: 'Benzin Family', sans-serif;
     align-items: center;
     gap: 1rem;
 }
@@ -358,7 +358,7 @@ section.offer-yellow .content > div img {
 section.offer-yellow .content > div p {
     color: #FFE500;
     text-transform: uppercase;
-    font-family: "Benzin Family", sans-serif;
+    font-family: 'Benzin Family', sans-serif;
     font-size: 1.5rem;
     display: flex;
     align-self: center;
@@ -564,7 +564,7 @@ section.stats .content  > .left {
 }
 section.stats .content  > .left .title {
     font-size: 3.5rem;
-    font-family: "Benzin Family", sans-serif;
+    font-family: 'Benzin Family', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -706,7 +706,7 @@ section.author .content  > .left .tooltip {
 section.author .content  > .left .name {
     color: #FFE500;
     font-size: 3rem;
-    font-family: "Benzin Family", sans-serif;
+    font-family: 'Benzin Family', sans-serif;
     font-weight: 800;
     line-height: 125%;
     text-transform: uppercase;
@@ -806,7 +806,7 @@ section.form .content > .left {
 section.form .content > .left .title {
     font-size: 2.5rem;
     color: #1b1c22;
-    font-family: "Benzin Family", sans-serif;
+    font-family: 'Benzin Family', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -1381,7 +1381,7 @@ section.course .content .d img:not(.mobile) {
     }
     section.stats .content .left > .title {
         font-size: 3rem;
-        font-family: "Benzin Family", sans-serif;
+        font-family: 'Benzin Family', sans-serif;
         font-weight: 800;
     }
     section.for > .title {
