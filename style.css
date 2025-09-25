@@ -1439,13 +1439,10 @@ section.course .content .d img:not(.mobile) {
         font-size: 1rem;
         margin-right: 1rem !important;
     }
-    .form-card__cta svg, a svg {
-        width: 32px;
-        height: 32px;
-    }
     .form-card__cta svg {
         width: 28px;
         height: 28px;
+        min-width: 28px;
     }
     .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
         width: 3.7rem !important;
