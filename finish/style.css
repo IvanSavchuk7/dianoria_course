@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'Benzin Family';
+    src: local('Benzin Family Bold'), local('Benzin-Family-Bold'),
+    url('../assets/fonts/Benzin-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Benzin-Bold.woff') format('woff'),
+    url('../assets/fonts/Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+html {
+    font-size: 20px;
+    background: #181818;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+body.loading {
+    pointer-events: none;
+    overflow: hidden;
+}
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
+html main {
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 120%;
+    text-decoration: none;
+    border: none;
+    font-family: Inter, sans-serif;
+}
+
+main {
+    min-height: 100vh;
+    background-image:
+            url("../assets/images/noise-bg.png"),
+            url("../assets/images/splinter-vector-2.png"),
+            url("../assets/images/graffity-bg.webp"),
+            url("../assets/images/splinter-vector-rotated.png"),
+            url("../assets/images/paint-vector-2.png");
+    background-size: 100% 100%, 100% auto, 100% 75%, auto 15rem, auto 8rem;
+    background-position: center, bottom center, bottom center, 0 0, top right;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: auto;
+}
+main .content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 60vw;
+    max-width: 840px;
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid #575757;
+    background-color: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    padding: 3.5rem 2.5rem;
+    gap: 40px;
+}
+main .content .title {
+
+}
+main .content .title > div {
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 120%;
+    text-align: center;
+    font-size: 2.25rem;
+}
+main .content .title > div:first-child {
+    color: #FFE500;
+    font-size: 2.6rem;
+}
+main .content .text {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 0 10px;
+    font-weight: 600;
+}
+main .content .clue {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    padding: 0 25px 0 25px;
+}
+main .content .clue > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+main .content .clue > div > .text {
+    padding: .5rem 1rem;
+    border-radius: 100px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(19.046483993530273px);
+    color: #FFE500;
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+main .content .whatsapp-btn {
+    margin:0 35px;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 16px;
+    background: #FFE500;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
+
+}
+main .content .whatsapp-btn > div {
+    color: #1b1c22;
+    font-family: "Benzin Family", sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+main .content .whatsapp-btn div:first-child img {
+    width: 32px;
+    height: 32px;
+}
+.loader {
+    --load-time: 2.5s;
+    outline: 2px solid #1b1c22;
+    background: #1b1c22;
+    border-radius: 5px;
+    outline-offset: 5px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding: 8px 0;
+    width: 90%;
+}
+
+.loader.loaded::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFE500;
+    box-shadow: 0 5px 7.5px 0 rgba(255, 255, 255, 0.53) inset;
+    z-index: 2;
+    animation: loading var(--load-time) ease-in-out forwards;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1439px) {
+    main .content {
+        width: 75vw;
+    }
+    main .content .title {
+        font-size: 42px;
+    }
+    main .content .text {
+        font-size: 20px;
+    }
+    main .clue .clue-title,
+    main .clue .clue-text {
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 840px) and (max-width: 1099px) {
+    html {
+        font-size: 18px;
+    }
+    main .content {
+        width: 85vw;
+    }
+    main .clue .clue-title,
+    main .clue .clue-text {
+        font-size: 16px;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 839px) {
+    html {
+        font-size: 16px;
+    }
+    main .content {
+        width: 90vw;
+    }
+    main .content .title > div {
+        font-size: 1.9rem;
+    }
+    main .content .title > div:first-child {
+        font-size: 2.1rem;
+    }
+    main .content .text {
+        font-size: 1.15rem;
+    }
+    main .content .clue {
+        padding: 0 15px 15px 15px;
+    }
+    main .content .clue > div > .text {
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 599px) {
+    main {
+        background-size: 0, 125% auto, 200% 75%, auto 15rem, 16rem 13rem, auto 8rem;
+    }
+    html {
+        font-size: 12px;
+    }
+    main .content {
+        width: 95vw;
+        padding: 35px 15px;
+        gap: 25px;
+    }
+    .loader {
+        padding: 6px 0;
+        width: 85%;
+    }
+    main .content .whatsapp-btn > div {
+        font-size: 1.25rem;
+    }
+    main .content .title > div {
+        font-size: 2.25rem;
+    }
+    main .content .title > div:first-child {
+        font-size: 2.5rem;
+    }
+    main .content .text {
+        padding: 0 15px;
+    }
+    main .content .whatsapp-btn {
+        margin: 0 15px;
+    }
+    main .content .text {
+        font-size: 1.1rem;
+    }
+}
+@media only screen and (max-width: 480px) {
+    main .content .title > div {
+        font-size: 2rem;
+    }
+    main .content .title > div:first-child {
+        font-size: 2.2rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: 10px;
+    }
+    .loader {
+        padding: 5px 0;
+        width: 90%;
+    }
+    main .content .whatsapp-btn {
+        padding: 15px;
+    }
+}
+@media only screen and (max-width: 380px) {
+}

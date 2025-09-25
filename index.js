@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        fetch("https://script.google.com/macros/s/AKfycbwu3IUA-HvLVrujAtZt2n8aQg8_osF71UGobFxpaYSc20Rdp_magBiJTXnbVWBhf6hO/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbziSjxS1LEfRED4hTfXpX3iWOVrRIj93C-fvJMOjnk-yj_Ye3mwybrqpq2oQuIkrZd_/exec", {
             method: "POST",
             body: formData
         })
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.result === "success") {
                     setTimeout(() => {
-                        window.location.href = "https://google.com";
+                        window.location.href = "https://ivansavchuk7.github.io/dianoria_course/finish";
                     }, 100);
                 }
             })
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        fetch("https://script.google.com/macros/s/AKfycbwu3IUA-HvLVrujAtZt2n8aQg8_osF71UGobFxpaYSc20Rdp_magBiJTXnbVWBhf6hO/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbziSjxS1LEfRED4hTfXpX3iWOVrRIj93C-fvJMOjnk-yj_Ye3mwybrqpq2oQuIkrZd_/exec", {
             method: "POST",
             body: formData
         })
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.result === "success") {
                     setTimeout(() => {
-                        window.location.href = "https://google.com";
+                        window.location.href = "https://ivansavchuk7.github.io/dianoria_course/finish";
                     }, 100);
                 }
             })
