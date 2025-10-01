@@ -269,7 +269,7 @@ section.hero form > .inner-text div:last-child {
     transform: translateY(-50%);
     width: 1.7rem;
     height: 1.7rem;
-    background-image: url("assets/images/ukraine.png");
+    background-image: url("../assets/images/ukraine.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
