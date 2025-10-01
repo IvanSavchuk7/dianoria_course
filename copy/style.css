@@ -50,7 +50,7 @@ section.hero {
             url("images/hero-ellipse-top.webp"),
             url("../assets/images/blur-bg.webp");
     background-repeat: no-repeat;
-    background-size: 100% 100%, 40% auto, 40% auto, 100% 100%;
+    background-size: 100% 100%, auto 100%, 40% auto, 100% 100%;
     background-position: center, 0 100%, 100% 0, center;
 }
 section.hero > * {
@@ -338,7 +338,7 @@ section.offer-yellow {
     padding: 1rem 4rem 2rem 4rem;
     background-image: url("images/offer-yellow-ellipse.png"), url("../assets/images/noise-bg.png");
     background-repeat: no-repeat;
-    background-size: 40% auto, 100% 300%;
+    background-size: auto 100%, 100% 300%;
     background-position: 0 -1%, center;
 }
 section.offer-yellow .content {
@@ -1011,6 +1011,9 @@ section.offer .content .left .tooltip svg {
     }
     section.course .container {
         gap: 1.5rem;
+    }
+    section.course {
+        padding-top: 4rem;
     }
 }
 @media only screen and (max-width: 480px) {

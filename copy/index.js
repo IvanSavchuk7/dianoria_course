@@ -16,7 +16,7 @@
 //             .then(data => {
 //                 if (data.result === "success") {
 //                     setTimeout(() => {
-//                         window.location.href = "https://ivansavchuk7.github.io/dianoria_course/finish";
+//                         window.location.href = "https://ai-expert.space/finish/";
 //                     }, 10);
 //                 }
 //             });
