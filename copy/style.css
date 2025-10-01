@@ -617,6 +617,9 @@ section.offer .content .left .tooltip svg {
     background-color: #FFE500;
     border-radius: 50%;
 }
+br.mobile {
+    display: none;
+}
 @media screen and (min-width: 2840px) {
     section.hero header .abs {
         top: 120%;
@@ -1028,7 +1031,7 @@ section.offer .content .left .tooltip svg {
         background-position: bottom left;
         padding: 1rem 1rem 1rem 5.5rem;
     }
-        section.hero .title br.mobile {
+    section.hero .title br.mobile {
         display: block;
     }
     section.hero form > .inner-text {
