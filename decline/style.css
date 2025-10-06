@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'Benzin Family';
+    src: local('Benzin Family Bold'), local('Benzin-Family-Bold'),
+    url('../assets/fonts/Benzin-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Benzin-Bold.woff') format('woff'),
+    url('../assets/fonts/Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+html {
+    font-size: 20px;
+    background: #181818;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+body.loading {
+    pointer-events: none;
+    overflow: hidden;
+}
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
+html main {
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 120%;
+    text-decoration: none;
+    border: none;
+    font-family: Inter, sans-serif;
+}
+main {
+    padding: 10vw 3rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background-image: url("../assets/images/noise-bg.png"), url("images/plus-bg-1.png"), url("images/plus-bg-2.png"), url("images/ellipse-1.png"), url("images/ellipse-2.png"), url("images/graffity-img.png"), url("images/bg.png");
+    background-repeat: no-repeat;
+    background-position: center, 85% 0, top left,  0 200%, top right, center right, center;
+    background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 100% 100%;
+    min-height: 100vh;
+}
+main > .title,
+main > .title span {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Benzin Family', sans-serif;
+}
+main > .title span {
+    color: #FB5151;
+}
+main > .tooltip {
+    color: #B1B1B1;
+    font-size: 1.5rem;
+    text-align: center;
+}
+main > .try {
+    border-radius: 16px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.35rem;
+    text-align: center;
+}
+a:not(.help-link) {
+    border:0;
+    cursor:pointer;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    background: #FFE500;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
+    color:#111;
+    font-size: 1.5rem;
+    position:relative;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 800;
+    line-height: 118%;
+    text-transform: uppercase;
+    width: fit-content;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem auto 0 auto;
+}
+a.help-link {
+    cursor:pointer;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    background: transparent;
+    border: 2px solid #FFE500;
+    color:#FFE500;
+    font-size: 1.5rem;
+    position:relative;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 800;
+    line-height: 118%;
+    text-transform: uppercase;
+    width: fit-content;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 1640px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 1240px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+    main {
+        background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 200% 200%;
+    }
+}
+@media only screen and (max-width: 830px) {
+    html {
+        font-size: 12px;
+    }
+    main {
+        align-items: center;
+        justify-content: center;
+        background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 300% 300%;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+    main {
+        padding-top: 35vw;
+        background-position: center, 100% 0, 10% 5%,  0 200%, top right, center right, center;
+        background-size: 100% 100%, 45vw auto, 20vw auto, 15vw auto, 20vw auto, 50% auto, 400% 400%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 11px;
+    }
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    font-size: 8px;
+}
