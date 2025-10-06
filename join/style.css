@@ -153,6 +153,9 @@ main > .bottom .after .text span {
     font-weight: 600;
     font-size: 1.15rem;
 }
+img.mobile {
+    display: none;
+}
 @media only screen and (max-width: 1640px) {
     html {
         font-size: 18px;
@@ -220,12 +223,22 @@ main > .bottom .after .text span {
 }
 @media only screen and (max-width: 600px) {
     main {
-        background-size: 100% 100%, 20vw auto, 15vw auto, 12vw auto, 100% auto, 100% 100%;
+        padding-top: 6rem;
+        background-position: center, 50% 0, 100% 0, 0 5%, center right, center;
+        background-size: 100% 100%, 30vw auto, 18vw auto, 16vw auto, 100% auto, 100% 100%;
     }
     main .content > .right img {
         margin-top: -4rem;
         margin-bottom: -2rem;
         width: 70%;
+    }
+    main > .content .right {
+        display: none;
+    }
+    img.mobile {
+        display: block;
+        width: 100%;
+        margin: -5rem 0 -1rem 0;
     }
 }
 @media only screen and (max-width: 480px) {
