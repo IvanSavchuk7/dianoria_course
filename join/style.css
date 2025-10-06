@@ -224,6 +224,7 @@ img.mobile {
 @media only screen and (max-width: 600px) {
     main {
         padding-top: 6rem;
+        padding-bottom: 2rem;
         background-position: center, 50% 0, 100% 0, 0 5%, center right, center;
         background-size: 100% 100%, 30vw auto, 18vw auto, 16vw auto, 100% auto, 100% 100%;
     }
@@ -272,4 +273,5 @@ img.mobile {
     a {
         padding: 1rem 2rem;
     }
+
 }
