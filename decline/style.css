@@ -76,45 +76,113 @@ main > .try {
     text-align: center;
 }
 a:not(.help-link) {
-    border:0;
-    cursor:pointer;
+    border: 0;
+    cursor: pointer;
     padding: 1.25rem 3rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 16px;
     background: #FFE500;
     box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
-    color:#111;
+    color: #111;
     font-size: 1.5rem;
-    position:relative;
     font-family: 'Benzin Family', sans-serif;
     font-weight: 800;
     line-height: 118%;
     text-transform: uppercase;
     width: fit-content;
-    align-items: center;
     gap: 1rem;
     margin: 1rem auto 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* --- Brighter shimmer effect --- */
+a:not(.help-link)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.85) 40%,
+            rgba(255, 255, 255, 0) 80%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 12s ease-in-out infinite;
+}
+
+/* --- Slight scale + glowing aura on hover --- */
+a:not(.help-link):hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 229, 0, 0.8);
+}
+
+/* --- Shimmer motion --- */
+@keyframes shimmer {
+    0% {
+        left: -80%;
+    }
+    50% {
+        left: 130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
 a.help-link {
-    cursor:pointer;
+    cursor: pointer;
     padding: 1.25rem 3rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 16px;
     background: transparent;
     border: 2px solid #FFE500;
-    color:#FFE500;
+    color: #FFE500;
     font-size: 1.5rem;
-    position:relative;
     font-family: 'Benzin Family', sans-serif;
     font-weight: 800;
     line-height: 118%;
     text-transform: uppercase;
     width: fit-content;
-    align-items: center;
     gap: 1rem;
     margin: 0 auto;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(255, 229, 0, 0); /* start transparent */
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* --- Pulse animation --- */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 229, 0, 0);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px 4px rgba(255, 229, 0, 0.4);
+        transform: scale(1.03);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(255, 229, 0, 0);
+        transform: scale(1);
+    }
+}
+
+/* Optional: brighter on hover */
+a.help-link:hover {
+    background: #FFE500;
+    color: #181818;
+    box-shadow: 0 0 25px 6px rgba(255, 229, 0, 0.6);
+    transform: scale(1.05);
+    animation: none; /* stop pulse while hovered */
 }
 @media only screen and (max-width: 1640px) {
     html {
