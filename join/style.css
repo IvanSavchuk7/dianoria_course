@@ -241,6 +241,11 @@ img.mobile {
         width: 100%;
         margin: -5rem 0 -1rem 0;
     }
+    .button-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: .5rem;
+    }
 }
 @media only screen and (max-width: 480px) {
     main > .bottom {
