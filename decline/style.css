@@ -45,7 +45,7 @@ main {
     gap: 1.25rem;
     background-image: url("../assets/images/noise-bg.png"), url("images/plus-bg-1.png"), url("images/plus-bg-2.png"), url("images/ellipse-1.png"), url("images/ellipse-2.png"), url("images/graffity-img.png"), url("images/bg.png");
     background-repeat: no-repeat;
-    background-position: center, 85% 0, top left,  0 200%, top right, center right, center;
+    background-position: center, 85% 0, top left,  0 150%, top right, center right, center;
     background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 100% 100%;
     min-height: 100vh;
 }
@@ -125,13 +125,18 @@ a.help-link {
     html {
         font-size: 16px;
     }
+    main {
+        background-position: center, 85% 0, top left,  0 200%, top right, center right, center;
+        background-size: 100% 100%, 20vw auto, 7.5vw auto, 20vw auto, 30vw auto, 50% auto, 100% 100%;
+    }
 }
 @media only screen and (max-width: 1024px) {
     html {
         font-size: 14px;
     }
     main {
-        background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 200% 200%;
+        background-position: center, 85% 0, top left,  0 100%, top right, center right, center;
+        background-size: 100% 100%, 20vw auto, 7.5vw auto, 25vw auto, 25vw auto, 50% auto, 200% 200%;
     }
 }
 @media only screen and (max-width: 830px) {
@@ -141,15 +146,15 @@ a.help-link {
     main {
         align-items: center;
         justify-content: center;
-        background-size: 100% 100%, 20vw auto, 7.5vw auto, 15vw auto, 20vw auto, 50% auto, 300% 300%;
+        background-size: 100% 100%, 20vw auto, 7.5vw auto, 35vw auto, 45vw auto, 50% auto, 300% 300%;
     }
 }
 @media only screen and (max-width: 600px) {
 
     main {
         padding-top: 35vw;
-        background-position: center, 100% 0, 10% 5%,  0 200%, top right, center right, center;
-        background-size: 100% 100%, 45vw auto, 20vw auto, 15vw auto, 20vw auto, 50% auto, 400% 400%;
+        background-position: center, 100% 0, 10% 5%,  0 100%, top right, center right, center;
+        background-size: 100% 100%, 45vw auto, 20vw auto, 35vw auto, 40vw auto, 50% auto, 400% 400%;
     }
 }
 @media only screen and (max-width: 480px) {
