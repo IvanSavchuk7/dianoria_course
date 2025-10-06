@@ -1,0 +1,471 @@
+@font-face {
+    font-family: 'Benzin Family';
+    src: local('Benzin Family Bold'), local('Benzin-Family-Bold'),
+    url('../assets/fonts/Benzin-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Benzin-Bold.woff') format('woff'),
+    url('../assets/fonts/Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+html {
+    font-size: 20px;
+    background: #181818;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+body.loading {
+    pointer-events: none;
+    overflow: hidden;
+}
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
+html main {
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 120%;
+    text-decoration: none;
+    border: none;
+    font-family: Inter, sans-serif;
+}
+section.hero {
+    padding: 4rem 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-image: url('../assets/images/noise-bg.png'), url("images/ellipse-top.png"), url("images/hero-bg.png");
+    background-position: center, top right, center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 30vw auto, 100% 100%;
+    position: relative;
+}
+section.hero .abs {
+    position: absolute;
+    left: 0;
+    bottom: -50vh;
+    width: auto;
+    height: 100vh;
+}
+section.hero .title,
+section.hero .title span,
+section.benefits .title,
+section.form > .content .left .title {
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Benzin Family', sans-serif;
+}
+section.hero .title span,
+section.form > .content .left .tooltip p span {
+    color: #FFE500;
+}
+section.hero .tooltip {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #B1B1B1;
+    margin-bottom: 1rem;
+}
+section.hero .video-wrapper {
+    border-radius: 24.61px;
+    border: 2.051px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(9.420666694641113px);
+    width: auto;
+    height: auto;
+    min-height: 70vh;
+}
+section.hero .bottom {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    border-radius: 14.677px;
+    border: 0.734px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(5.870898723602295px);
+    margin: auto;
+}
+section.hero .bottom img {
+    height: 2.6rem;
+    width: auto;
+    min-height: 2.6rem;
+}
+section.hero .bottom p {
+    font-size: 1.25rem;
+}
+section.benefits {
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-image: url('../assets/images/noise-bg.png'), url("images/benefits-bg.png");
+    background-size: 100% 150%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center, 0 -1%;
+}
+section.benefits .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+section.benefits .content > div {
+    width: calc(50% - 1rem);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1.5rem 0 0;
+    border-radius: 16px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+}
+section.benefits .content > div img {
+    width: 30%;
+    height: auto;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+section.benefits .content > div p {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+section.form {
+    padding: 4rem 4rem 2rem 4rem;
+    background-image: url('../assets/images/noise-bg.png'), url("images/form-bg.png");
+    background-position: center, center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.form > .content {
+    display: flex;
+}
+section.form > .content > div {
+    flex: 1;
+}
+section.form > .content .right img {
+    width: 100%;
+    height: auto;
+}
+section.form > .content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+section.form > .content .left .tooltip {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+section.form > .content .left .tooltip img {
+    height: 4rem;
+    width: auto;
+    min-height: 4rem;
+}
+section.form > .content .left .tooltip p,
+section.form > .content .left .tooltip p span {
+    font-size: 1.25rem;
+}
+section.form .form {
+    width: 100%;
+}
+.form-card{
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    color:#fff;
+    border-radius: 20px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.form-card__top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+    justify-content: space-between;
+}
+.form-card__title{ font-weight:600; font-size: 1.4rem; }
+.form-card__price{
+    position:relative;
+    color: rgba(204, 204, 204, 0.7);
+    opacity: 1;
+    font-weight:600;
+    font-size: 1.4rem;
+}
+.form-card__price::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    height:2.5px;
+    background: #FFE500;;
+    transform: rotate(-18deg);
+}
+.form-card__badge{
+    border-radius: 100px;
+    background: #FFE500;
+    color:#111;
+    font-weight:700;
+    font-size:1rem;
+    padding:.5rem 1rem;
+}
+
+.form-card__input-wrap{
+    display:block;
+    margin:1.5rem 0 1.5rem;
+    background: linear-gradient(180deg,#3a3b41,#2a2b31);
+    border-radius:16px;
+    padding: 1rem 1.5rem 1rem 3rem;
+    position:relative;
+}
+.form-card__input-wrap.tel::before{
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.7rem;
+    height: 1.7rem;
+    background-image: url("../assets/images/ukraine.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.form-card__input-wrap input{
+    width:100%;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:#e6e9ef;
+    font-size:1.3rem;
+    font-weight:400;
+}
+.form-card__input-wrap input::placeholder{ color:#aaa }
+.form-card__arrow svg{ width:14px; height:14px; fill:#ffdd55 }
+
+.form-card__cta,
+a {
+    border:0;
+    cursor:pointer;
+    width:100%;
+    padding:1rem 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    background: #FFE500;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
+    color:#111;
+    font-size: 1rem;
+    position:relative;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 700;
+    line-height: 118%;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    html {
+        font-size: 24px;
+    }
+    section.hero,
+    section.benefits,
+    section.form {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    section.hero .video-wrapper {
+        min-height: 820px;
+    }
+    section.form > .content > .right {
+        flex: 2;
+    }
+}
+@media only screen and (min-width: 1921px) and (max-width: 2559px) {
+
+    section.hero,
+    section.benefits,
+    section.form {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    section.form > .content > .right {
+        flex: 2;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+    section.hero .title, section.hero .title span, section.benefits .title, section.form > .content .left .title {
+        font-size: 3rem;
+    }
+    section.hero .video-wrapper {
+        min-height: 640px;
+    }
+    section.form > .content > .left {
+        flex: 3;
+    }
+    section.form > .content > .right {
+        flex: 4;
+    }
+    section.hero .abs {
+        height: 50vh;
+        bottom: -25vh;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+    section.hero .title, section.hero .title span, section.benefits .title, section.form > .content .left .title {
+        font-size: 3rem;
+    }
+    section.form > .content > .left {
+        flex: 4;
+    }
+    section.form > .content > .right {
+        flex: 5;
+    }
+    section.form > .content .left .tooltip p, section.form > .content .left .tooltip p span {
+        font-size: 1rem;
+    }
+    section.benefits .content > div p {
+        font-size: 1.1rem;
+    }
+    section.hero .video-wrapper {
+        min-height: 540px;
+    }
+    section.benefits {
+        background-size: 100% 220%, 100% 100%;
+    }
+    section.hero .abs {
+        height: 50vh;
+        bottom: -25vh;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1239px) {
+    html {
+        font-size: 14px;
+    }
+    section.hero .video-wrapper {
+        min-height: 480px;
+    }
+    section.hero .abs {
+        height: 50vh;
+        bottom: -25vh;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1239px) {
+    html {
+        font-size: 12px;
+    }
+    section.hero .video-wrapper {
+        min-height: 420px;
+    }
+    section.hero .abs {
+        height: 50vh;
+        bottom: -25vh;
+    }
+}
+@media only screen and (max-width: 829px) {
+    html {
+        font-size: 14px;
+    }
+    section.hero .title, section.hero .title span, section.benefits .title, section.form > .content .left .title {
+        font-size: 2.5rem;
+    }
+    section.hero .title br {
+        display: none;
+    }
+    section.hero .video-wrapper {
+        min-height: 280px;
+    }
+    section.benefits {
+        background-size: 100% 100%, 100% 100%;
+    }
+    section.benefits .content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    section.benefits .content > div {
+        width: 100%;
+    }
+    section.form > .content {
+        flex-direction: column;
+    }
+    section.form > .content .left {
+        margin-top: 0;
+    }
+    section.form .right {
+        display: none;
+    }
+    section.form .left .tooltip {
+        margin-top: -4rem;
+    }
+    section.form img.mobile {
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section.hero,
+    section.benefits,
+    section.form {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    section.benefits .content > div p {
+        font-size: 1rem;
+    }
+    section.hero .bottom p {
+        font-size: 1rem;
+    }
+    section.hero .video-wrapper {
+        min-height: 240px;
+    }
+    section.hero .tooltip {
+        font-size: 1.2rem;
+    }
+    section.hero .abs {
+        height: 40vh;
+        bottom: -20vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: 11px;
+    }
+    section.hero .video-wrapper {
+        min-height: 200px;
+    }
+}
