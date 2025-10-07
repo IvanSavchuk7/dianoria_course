@@ -38,3 +38,25 @@ window.onload = function () {
     document.body.style.opacity = '1';
     document.body.classList.remove('loading');
 };
+
+window.addEventListener("load", () => {
+    const iframe = document.getElementById("promo-video");
+    const overlay = document.querySelector(".video-overlay");
+    const player = new Vimeo.Player(iframe);
+
+    // Wait 2 seconds, then autoplay
+    setTimeout(() => {
+        player.play().then(() => {
+            // Fade out the overlay once the video starts
+            overlay.classList.add("hidden");
+        }).catch(err => {
+            console.warn("Autoplay blocked:", err.name);
+            overlay.textContent = "Tap to play video";
+            overlay.style.cursor = "pointer";
+            overlay.addEventListener("click", () => {
+                player.play();
+                overlay.classList.add("hidden");
+            });
+        });
+    }, 1500);
+});
