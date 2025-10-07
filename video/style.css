@@ -429,6 +429,9 @@ a {
         height: auto;
         margin: auto;
     }
+    section.form > .content .right img {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -480,4 +483,5 @@ a {
     html {
         font-size: 11px;
     }
+
 }
