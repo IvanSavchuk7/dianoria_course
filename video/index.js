@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.result === "success") {
                     setTimeout(() => {
-                        window.location.href = "https://google.com/";
+                        window.location.href = "https://ivansavchuk7.github.io/dianoria_course/video/join";
                     }, 10);
                 }
             });

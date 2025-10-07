@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Benzin Family';
+    src: local('Benzin Family Bold'), local('Benzin-Family-Bold'),
+    url('../../assets/fonts/Benzin-Bold.woff2') format('woff2'),
+    url('../../assets/fonts/Benzin-Bold.woff') format('woff'),
+    url('../../assets/fonts/Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+html {
+    font-size: 20px;
+    background: #181818;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+body.loading {
+    pointer-events: none;
+    overflow: hidden;
+}
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
+html main {
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 120%;
+    text-decoration: none;
+    border: none;
+    font-family: Inter, sans-serif;
+}
+main {
+    padding: 3rem 10%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../assets/images/noise-bg.png"), url("../images/ellipse-top.png"), url("../images/ellipse-bottom.png"), url("images/bg.png");
+    background-position: center, right top, left bottom, center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 30vw auto, 30vw auto, 100% 100%;
+    min-height: 100vh;
+}
+main > div {
+     flex: 1;
+}
+main > .right img {
+    width: 100%;
+    height: auto;
+    background-image: url("images/confetti.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+main > .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+main .title,
+main .title > span {
+    font-size: 3rem;
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+main .title > span {
+    color: #FFE500;
+}
+main .tooltip {
+    text-align: center;
+    font-size: 1.25rem;
+}
+main .offer {
+    border-radius: 16px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: fit-content;
+    margin: 1rem auto 0 auto;
+}
+main .offer .text {
+    font-size: 1.2rem;
+    text-align: center;
+}
+main .offer .info {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+a {
+    border: 0;
+    cursor: pointer;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #FFE500;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
+    color: #111;
+    font-size: 1.5rem;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 800;
+    line-height: 118%;
+    text-transform: uppercase;
+    width: 100%;
+    gap: 1rem;
+    margin: 1rem auto 0 auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a img {
+    width: auto;
+    height: 2.5rem;
+}
+a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.85) 40%,
+            rgba(255, 255, 255, 0) 80%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 6s ease-in-out infinite;
+}
+
+a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 229, 0, 0.8);
+}
+
+@keyframes shimmer {
+    0% {
+        left: -80%;
+    }
+    50% {
+        left: 130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+img.mobile {
+    display: none;
+}
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    html {
+        font-size: 22px;
+    }
+    main {
+        padding: 2rem 20%;
+    }
+}
+@media only screen and (max-width: 1920px) {
+    main {
+        padding: 3rem;
+    }
+}
+@media only screen and (max-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 1240px) {
+    html {
+        font-size: 16px;
+    }
+    main {
+        padding: 2.5rem 1.5rem;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 830px) {
+    html {
+        font-size: 12px;
+    }
+    main {
+        background-size: 150% 150%, 30vw auto, 30vw auto, 100% 100%;
+    }
+    main .right {
+        display: none;
+    }
+    img.mobile {
+        display: block;
+        width: 50%;
+        height: auto;
+        margin: auto;
+        background-image: url("images/confetti.png");
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    img.mobile {
+        width: 75%;
+    }
+    main .offer {
+        margin-top: -7.5rem;
+    }
+    main .title,
+    main .title > span {
+        font-size: 2.5rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (max-width: 480px) {
+    main {
+        padding: 2rem 0;
+        background-image: url("../../assets/images/noise-bg.png"), url("images/confetti.png"), url("../images/ellipse-top.png"), url("../images/ellipse-bottom.png"), url("images/bg.png");
+        background-position: center, center top, right top, left bottom, center;
+        background-repeat: no-repeat;
+        background-size: 200% 200%, 100% auto, 30vw auto, 30vw auto, 100% 100%;
+    }
+    img.mobile {
+        width: 100%;
+        background-image: none;
+    }
+    main .title,
+    main .title > span {
+        font-size: 2rem;
+    }
+    main .offer {
+        margin-top: -9rem;
+    }
+}
