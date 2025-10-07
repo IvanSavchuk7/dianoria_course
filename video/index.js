@@ -44,19 +44,9 @@ window.addEventListener("load", () => {
     const overlay = document.querySelector(".video-overlay");
     const player = new Vimeo.Player(iframe);
 
-    // Wait 2 seconds, then autoplay
-    setTimeout(() => {
-        player.play().then(() => {
-            // Fade out the overlay once the video starts
-            overlay.classList.add("hidden");
-        }).catch(err => {
-            console.warn("Autoplay blocked:", err.name);
-            overlay.textContent = "Tap to play video";
-            overlay.style.cursor = "pointer";
-            overlay.addEventListener("click", () => {
-                player.play();
-                overlay.classList.add("hidden");
-            });
-        });
-    }, 1500);
+    overlay.addEventListener("click", () => {
+        player.setMuted(false);
+        player.play();
+        overlay.classList.add("hidden");
+    });
 });
