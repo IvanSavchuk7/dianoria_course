@@ -283,6 +283,9 @@ a {
     align-items: center;
     gap: 1rem;
 }
+section.form img.mobile {
+    display: none;
+}
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
@@ -485,3 +488,4 @@ a {
     }
 
 }
+
