@@ -531,6 +531,9 @@ section.form img.mobile {
     html {
         font-size: 13px;
     }
+    section.hero .title, section.hero .title span, section.benefits .title, section.form > .content .left .title {
+        font-size: 2.3rem;
+    }
 }
 @media only screen and (max-width: 420px) {
     html {

@@ -77,6 +77,7 @@ section.hero header > div {
 section.hero header > div:first-child {
     border-right: 2px solid #575757;
     padding-right: 1rem;
+    white-space: nowrap;
 }
 section.hero .title {
     display: flex;
@@ -235,7 +236,7 @@ section.form .inner .bonus-wrapper > div > p:last-child {
     transform: translateY(-50%);
     width: 1.7rem;
     height: 1.7rem;
-    background-image: url("assets/images/ukraine.png");
+    background-image: url("assets/images/phone.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1091,10 +1092,10 @@ section.course .content .d img:not(.mobile) {
         display: none;
     }
     section.hero header > div:first-child {
-        padding-right: 2rem;
+        padding-right: 1rem;
     }
     section.hero header {
-        gap: 2rem;
+        gap: 1rem;
     }
     section.offer-yellow .content > div p {
         font-size: 1rem;
