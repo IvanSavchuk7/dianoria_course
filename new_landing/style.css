@@ -1464,10 +1464,25 @@ section.hero img.mobile {
     section.offer-yellow .content .left .bottom {
         padding-left: 2rem;
     }
+    section.hero > .tooltip {
+        font-size: 1.1rem;
+    }
+    .form-card__title {
+        font-size: 1.18rem;
+    }
+    section.why-join .left .link-wrapper > div {
+        padding: 1rem 1.5rem;
+    }
 }
 @media only screen and (max-width: 395px) {
+    html {
+        font-size: 12px;
+    }
     section.offer .content .right .highlighted span, section.stats .highlighted span {
         font-size: 1rem;
+    }
+    section.why-join .left .link-wrapper > div a br {
+        display: none;
     }
 }
 @media only screen and (max-width: 365px) {
