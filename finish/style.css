@@ -159,7 +159,9 @@ main .content .whatsapp-btn div:first-child img {
     z-index: 2;
     animation: loading var(--load-time) ease-in-out forwards;
 }
-
+br.mobile {
+    display: none;
+}
 @keyframes loading {
     0% {
         width: 0;
@@ -216,7 +218,7 @@ main .content .whatsapp-btn div:first-child img {
         padding: 0 15px 15px 15px;
     }
     main .content .clue > div > .text {
-        font-size: 1rem;
+        font-size: .95rem;
     }
 }
 @media only screen and (max-width: 599px) {
@@ -254,12 +256,21 @@ main .content .whatsapp-btn div:first-child img {
         font-size: 1.1rem;
     }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 484px) {
     main .content .title > div {
         font-size: 2rem;
     }
     main .content .title > div:first-child {
         font-size: 2.2rem;
+    }
+    br.mobile {
+        display: block;
+    }
+    main .content .clue > div {
+        width: 100%;
+    }
+    main .content .clue > div > .text {
+        width: 100%;
     }
 }
 @media only screen and (max-width: 420px) {
