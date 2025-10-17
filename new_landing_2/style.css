@@ -1468,6 +1468,9 @@ a:hover,
     section.hero .right .author-text {
         font-size: .75rem;
     }
+    .form-card__title {
+        font-size: 1.3rem;
+    }
 }
 @media only screen and (max-width: 389px) {
     html {
@@ -1481,3 +1484,4 @@ a:hover,
     }
 
 }
+
