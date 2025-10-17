@@ -1439,10 +1439,39 @@ a:hover,
     section.author .content > .left .list > .item div {
         font-size: 1.2rem;
     }
+    section.why-join a.mobile,
+    section.about a,
+    section.why-join a,
+    section.results a {
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    section.results .swiper-wrapper .card > .name {
+        font-size: 1.4rem;
+    }
+    section.results .swiper-wrapper .card > .text {
+        font-size: 1.15rem;
+    }
+    section.hero .bonus-wrapper > div > p:first-child {
+        font-size: .9rem;
+    }
+    section.hero .bonus-wrapper > div > p:last-child {
+        font-size: 1rem;
+    }
+    section.author .content > .right .partners .wrapper {
+        gap: 1rem;
+    }
 }
 @media only screen and (max-width: 389px) {
     html {
         font-size: 12px;
+    }
+    .form-card__top {
+        gap: 11px;
+    }
+    section.hero .right .author-text {
+        font-size: .75rem;
     }
 }
 @media only screen and (max-width: 365px) {
