@@ -1462,11 +1462,6 @@ a:hover,
     section.author .content > .right .partners .wrapper {
         gap: 1rem;
     }
-}
-@media only screen and (max-width: 389px) {
-    html {
-        font-size: 12px;
-    }
     .form-card__top {
         gap: 11px;
     }
@@ -1474,8 +1469,15 @@ a:hover,
         font-size: .75rem;
     }
 }
+@media only screen and (max-width: 389px) {
+    html {
+        font-size: 12px;
+    }
+
+}
 @media only screen and (max-width: 365px) {
     html {
         font-size: 11px;
     }
+
 }
