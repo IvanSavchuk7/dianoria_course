@@ -1476,12 +1476,9 @@ a:hover,
     html {
         font-size: 12px;
     }
-
 }
 @media only screen and (max-width: 365px) {
     html {
         font-size: 11px;
     }
-
 }
-
