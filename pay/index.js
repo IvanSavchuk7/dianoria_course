@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         const submitBtn = document.getElementById("submit-btn-1");
         submitBtn.disabled = true;
-        
+
         const phoneInput = form.querySelector('input[name="Телефон"]');
         if (phoneInput) {
             let phoneSendpulse = form.querySelector('input[name="Телефон sendpulse"]');

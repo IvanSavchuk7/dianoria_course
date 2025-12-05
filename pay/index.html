@@ -38,6 +38,22 @@
   <script src="index.js" defer></script>
   <!-- Meta Pixel Code -->
     <script>
+
+      var exid = localStorage.exid || getCookie("exid") || Date.now().toString();
+      localStorage.exid = exid;
+      setCookie("exid", exid);
+
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+        return match ? decodeURIComponent(match[2]) : "";
+      }
+
+      function setCookie(name, value, days = 365) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
+      }
+
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -53,6 +69,7 @@
                    src="https://www.facebook.com/tr?id=1462846121598441&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <title>ВСТИГНИ ЗАЛИШИТИ ЗАЯВКУ НА НАВЧАННЯ AI-СПЕЦІАЛІСТ</title>
 </head>
 <body>
@@ -295,69 +312,75 @@
   </main>
 
   <script>
-    (function(){
-      const pad = n => n.toString().padStart(2,'0');
-
-      document.querySelectorAll('.countdown').forEach(el => {
-        const durationMin = parseInt(el.dataset.timer, 10) || 10;
-        const timeEl = el.querySelector('.countdown__time');
-        const end = Date.now() + durationMin * 60 * 1000;
-
-        function update() {
-          const remaining = Math.max(0, end - Date.now());
-          const totalSec = Math.floor(remaining / 1000);
-          const mm = Math.floor(totalSec / 60);
-          const ss = totalSec % 60;
-          timeEl.textContent = `${pad(mm)}:${pad(ss)}`;
-          if (totalSec <= 0) clearInterval(interval);
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
         }
-
-        update();
-        const interval = setInterval(update, 250);
-      });
-    })();
-  </script>
-  <script>
-    (() => {
-      const loaders = document.querySelectorAll('.loader');
-
-      const runOnce = (root) => {
-        if (root.dataset.started) return;
-        root.dataset.started = '1';
-
-        const bar = root.querySelector('.loading-bar');
-        const target = Math.max(0, Math.min(100, parseInt(root.dataset.target || '75', 10)));
-
-        // Kick the transition to the target width
-        requestAnimationFrame(() => {
-          bar.style.width = target + '%';
-        });
-
-        // Mark done when the transition ends (for optional dot pause, etc.)
-        const onEnd = (e) => {
-          if (e.propertyName !== 'width') return;
-          root.classList.add('is-done');
-          bar.removeEventListener('transitionend', onEnd);
-        };
-        bar.addEventListener('transitionend', onEnd);
-      };
-
-      if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-              runOnce(entry.target);
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: [0, 0.35, 1] });
-
-        loaders.forEach(el => io.observe(el));
-      } else {
-        // Fallback: start immediately if IO isn't supported
-        loaders.forEach(runOnce);
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);``
+        }
       }
-    })();
+      return "";
+    };
+    var data = {};
+    data.tracking = {};
+    data.metadata = {};
+    function getIp() {
+      fetch("https://ipapi.co/json/")
+              .then((results) => results.json())
+              .then((rez) => {
+                data.tracking.ip = rez.ip ;
+                data.tracking.city = rez.city;
+                data.tracking.country = rez.country;
+              })
+              .catch((error) => {
+                console.error(error);
+              });
+    };
+
+    getIp();
+
+    data.tracking.fbid = getCookie("_fbp");
+    data.metadata.fbc = getCookie("_fbc");
+    data.metadata.lnk = window.location.origin + window.location.pathname;
+    data.metadata.parm = window.location.search;
+
+    document.getElementById("header-form").onsubmit = function(){
+      data.metadata.u_a = window.navigator.userAgent ;
+      var exid = window.localStorage.exid;
+
+      if(exid == null || exid.length == 0 || exid == undefined || exid == "undefined"){
+        exid = getCookie("exid");
+      };
+      data.metadata.exid = exid;
+      data.metadata.eid = Date.now();
+      fbq('track' , 'Lead', {} , {eventID: data.metadata.eid} );
+      data.phone = document.querySelector('input[name="Телефон"]').value;
+      data.email = document.querySelector('input[name="Ім\'я"]').value;
+      data.redirect_url = "" ;
+      data.callback_url = "";
+      console.log(data);
+      fetch('https://gw.onlizer.com/api/payments/wayforpay/0c2d11c0-21be-46c2-8684-f3b71ddb73a1/link', {
+        method: 'POST',
+        mode: "cors",
+        cache: "no-cache",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+      }).then((response) => {
+        if(response.status == 200){
+          return response.json();
+        } else {
+          console.log('error')
+        };
+      }).then((data) => {
+        window.location.href=data.link
+      });
+    };
   </script>
 
 
