@@ -82,7 +82,7 @@ section.hero a {
 }
 section.hero .title,
 section.hero .title > span {
-    font-size: 2rem;
+    font-size: 2.15rem;
     font-family: 'Benzin Family', sans-serif;
     text-transform: uppercase;
 }
