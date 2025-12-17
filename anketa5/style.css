@@ -1,0 +1,792 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: 'Benzin Family';
+    src: local('Benzin Family Bold'), local('Benzin-Family-Bold'),
+    url('../assets/fonts/Benzin-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Benzin-Bold.woff') format('woff'),
+    url('../assets/fonts/Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+html {
+    font-size: 20px;
+    background: #181818;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+body.loading {
+    pointer-events: none;
+    overflow: hidden;
+}
+html.fonts-loading body { visibility: hidden; }
+
+html.fonts-ready body { visibility: visible; }
+html main {
+    overflow: hidden;
+}
+.input-error {
+    border: 1px solid #e63946 !important;
+}
+
+.phone-error {
+    color: #e63946;
+    font-size: .9rem;
+    margin-top: calc(-1.5rem + .9rem);
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5rem;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 120%;
+    text-decoration: none;
+    border: none;
+    font-family: Inter, sans-serif;
+}
+span,
+.author > .name,
+.text-top,
+.list p {
+    color: #FFE500;
+}
+
+
+section.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 5rem 3rem 2.5rem;
+    background-image:
+            url("../assets/images/noise-bg.png"),
+            url("../assets/images/author-reg.png"),
+            url("../assets/images/graffity-bg.webp"),
+            url("../assets/images/blur-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, auto 85%, 75% auto, 100% 100%;
+    background-position: center, 100% 110%, right bottom, center;
+}
+section.hero a {
+    width: fit-content;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: fit-content;
+}
+section.hero .title,
+section.hero .title > span {
+    font-size: 2rem;
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+}
+section.hero .title {
+    font-size: 2.35rem;
+}
+section.hero .tooltip {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+section.hero .tooltip > .img-wrapper {
+    padding: .5rem .5rem .25rem .5rem;
+    border-radius: 12px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(3px);
+    height: fit-content;
+}
+section.hero .tooltip p {
+    font-size: 1.25rem;
+    color: #B1B1B1;
+}
+section.hero .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .list-wrapper > .list-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+section.hero .list-wrapper > .list {
+    display: flex;
+    gap: .5rem;
+}
+section.hero .list-wrapper > .list > .item {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: .5rem 1rem;
+    border-radius: 112.69px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: rgba(147, 147, 147, 0.10);
+    backdrop-filter: blur(22.538066864013672px);
+}
+section.hero .list-wrapper > .list > .item p {
+    font-style: normal;
+    line-height: 108%;
+    font-weight: 600;
+}
+section.hero .list-wrapper > .list-bottom {
+    font-size: 1.2rem;
+    color: #B1B1B1;
+}
+section.hero > .bottom-content {
+    display: flex;
+    justify-content: space-between;
+}
+section.hero > .bottom-content .author {
+    padding:  1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+section.hero .author > .text {
+    color: #B1B1B1;
+}
+section.hero .author > .name {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+section.form {
+    padding: 5rem 8rem 2rem 5rem;
+    background-image: url('../assets/images/noise-bg.png'), url("../video/images/form-bg.png");
+    background-position: center, center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.form > .content {
+    display: flex;
+}
+section.form > .content > div {
+    flex: 1;
+}
+section.form > .content .right img {
+    width: 100%;
+    height: auto;
+}
+section.form > .content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+section.form > .content .left .tooltip {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+section.form > .content .left .tooltip img {
+    height: 4rem;
+    width: auto;
+    min-height: 4rem;
+}
+section.form > .content .left .tooltip p,
+section.form > .content .left .tooltip p span {
+    font-size: 1.25rem;
+}
+section.form .form {
+    width: 100%;
+}
+.form-card{
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    color:#fff;
+    border-radius: 20px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.form-card__top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+    justify-content: space-between;
+}
+.form-card__title{ font-weight:600; font-size: 1.4rem; }
+.form-card__price{
+    position:relative;
+    color: rgba(204, 204, 204, 0.7);
+    opacity: 1;
+    font-weight:600;
+    font-size: 1.4rem;
+}
+.form-card__price::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    height:2.5px;
+    background: #FFE500;;
+    transform: rotate(-18deg);
+}
+.form-card__badge{
+    border-radius: 100px;
+    background: #FFE500;
+    color:#111;
+    font-weight:700;
+    font-size:1rem;
+    padding:.5rem 1rem;
+}
+
+.form-card__input-wrap{
+    display:block;
+    margin:1.5rem 0 1.5rem;
+    background: linear-gradient(180deg,#3a3b41,#2a2b31);
+    border-radius:16px;
+    padding: 1rem 1.5rem 1rem 3rem;
+    position:relative;
+}
+.form-card__input-wrap.tel::before{
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.7rem;
+    height: 1.7rem;
+    background-image: url("../assets/images/phone.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.form-card__input-wrap input{
+    width:100%;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:#e6e9ef;
+    font-size:1.3rem;
+    font-weight:400;
+}
+.form-card__input-wrap input::placeholder{ color:#aaa }
+.form-card__arrow svg{ width:14px; height:14px; fill:#ffdd55 }
+
+.form-card__cta,
+a {
+    border:0;
+    cursor:pointer;
+    width:100%;
+    padding:1rem 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    background: #FFE500;
+    box-shadow: 0 21px 22.5px 0 rgba(255, 255, 255, 0.53) inset;
+    color:#111;
+    font-size: 1rem;
+    position:relative;
+    overflow: hidden;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 700;
+    line-height: 118%;
+    text-transform: uppercase;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section.form img.mobile,
+section.hero img.mobile {
+    display: none;
+}
+
+section.form .title {
+    font-size: 3.5rem;
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+a::before,
+.form-card__cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.85) 40%,
+            rgba(255, 255, 255, 0) 80%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 6s ease-in-out infinite;
+}
+
+a:hover,
+.form-card__cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(255, 229, 0, 0.8);
+}
+
+@keyframes shimmer {
+    0% {
+        left: -80%;
+    }
+    50% {
+        left: 130%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+section.tariffs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem;
+    background-image: url('../assets/images/noise-bg.png'), url('../assets/images/noise-bg.png'), url("../video/images/form-bg.png");
+    background-position: top, bottom, center;
+    background-repeat: no-repeat;
+    background-size: 100% 50%, 100% 50%, 100% 100%;
+}
+section.tariffs > .title {
+    font-size: 4rem;
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+section.tariffs > .content {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+}
+section.tariffs > .content > .item {
+    width: calc(33% - 1.5rem);
+    display: flex;
+    flex-direction: column;
+    background: #202020;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    gap: 1rem;
+    border-radius: 16px;
+    position: relative;
+}
+section.tariffs > .content > .item .abs {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 6rem;
+    transform: translate(-50%, -50%);
+}
+section.tariffs .item > .title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    width: 100%;
+}
+section.tariffs .item > .title img {
+    width: 100%;
+    height: auto;
+}
+section.tariffs .item > .info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    gap: 1rem;
+}
+section.tariffs .item > .info > div {
+    padding: .5rem 1rem .5rem 1rem;
+    flex: 1;
+    gap: .5rem;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+}
+section.tariffs .item > .info > div:first-child {
+    background: #FFE500;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    padding-left: .5rem;
+}
+section.tariffs .item > .info > div:first-child > div:last-child,
+section.tariffs .item > .info > div:last-child {
+    white-space: nowrap;
+    color: black;
+    font-size: .85rem;
+}
+section.tariffs .item > .info > div > img {
+    height: .9rem;
+    width: .9rem;
+}
+section.tariffs .item > .info > div:last-child {
+    background: #D9D9D9;
+    border-radius: 32px;
+
+}
+section.tariffs .item > .list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+section.tariffs .item > .list > .list-item {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+section.tariffs .item > .list > .list-item .text {
+    font-size: .75rem;
+}
+section.tariffs .item .list-item img {
+    height: .75rem;
+    width: .75rem;
+}
+section.tariffs .unavailable > * {
+    opacity: .3;
+}
+section.tariffs .item .separator {
+    width: 100%;
+    height: 2px;
+    background: rgba(177, 177, 177, 0.33);
+}
+section.tariffs .item .extra {
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    width: 100%;
+}
+section.tariffs .item img.price {
+    width: 50%;
+    display: block;
+    margin: auto;
+    height: auto;
+}
+section.tariffs .item .extra > * {
+    flex: 1;
+}
+section.tariffs .item .extra > .text {
+    color: #FFE500;
+    font-weight: 600;
+    font-size: .8rem;
+    text-align: center;
+}
+section.tariffs .item .extra img {
+    width: 100%;
+    height: auto;
+}
+
+section.tariffs .item button {
+    width: 100%;
+    background: transparent;
+}
+section.tariffs .item button img {
+    width: 100%;
+    height: auto;
+}
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    html {
+        font-size: 24px;
+    }
+    section.hero,
+    section.benefits,
+    section.form {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    section.form > .content > .left {
+        flex: 4;
+    }
+    section.form > .content > .right {
+        flex: 5;
+    }
+}
+@media only screen and (min-width: 1921px) and (max-width: 2559px) {
+    html {
+        font-size: 22px;
+    }
+    section.hero,
+    section.benefits,
+    section.form {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    section.form > .content > .left {
+        flex: 4;
+    }
+    section.form > .content > .right {
+        flex: 5;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+
+}
+@media only screen and (min-width: 830px) and (max-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+    section.form > .content > .left {
+        flex: 4;
+    }
+    section.form > .content > .right {
+        flex: 5;
+    }
+    section.form > .content .left .tooltip p, section.form > .content .left .tooltip p span {
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1239px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1239px) {
+    html {
+        font-size: 11px;
+    }
+    a svg {
+        width: 2rem;
+        height: 2rem;
+    }
+    section.hero .tooltip > .img-wrapper svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    section.form {
+        padding: 5rem 5rem 3rem 5rem;
+    }
+    section.form .title {
+        font-size: 3rem;
+    }
+    section.form .form-card__cta br {
+        display: none;
+    }
+    section.form .form-card__cta {
+        font-size: .92rem;
+    }
+}
+@media only screen and (max-width: 829px) {
+    html {
+        font-size: 14px;
+    }
+    section.form, section.hero {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    section.form {
+        background-size: 125% 125%, 100% 100%;
+    }
+    section.form > .content {
+        flex-direction: column;
+    }
+    section.form > .content .left {
+        margin-top: 0;
+    }
+    section.form .right {
+        display: none;
+    }
+    section.form .left .tooltip {
+        margin-top: -4rem;
+    }
+    section.form img.mobile {
+        display: block;
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+    section.form > .content .right img {
+        display: none;
+    }
+    section.hero {
+        padding-top: 1.5rem;
+        gap: 1.5rem;
+        align-items: center;
+        background-image: url(../assets/images/noise-bg.png), url(../assets/images/graffity-bg.webp), url(../assets/images/blur-bg.webp);
+        background-repeat: no-repeat;
+        background-size: 125% 125%, 200% auto, 100% 100%;
+        background-position: center, 0 110%, center;
+    }
+    section.hero img.mobile {
+        display: block;
+        width: 100%;
+    }
+    section.hero .bottom-content {
+        flex-direction: column;
+    }
+    section.hero .list-wrapper > .list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section.hero .list-wrapper > .list > .item p {
+        white-space: nowrap;
+        font-size: 1.1rem;
+        line-height: 110%;
+    }
+    section.hero .title, section.hero .title > span,
+    section.hero .list-wrapper > .list-title,
+    section.hero .list-wrapper > .list-bottom,
+    section.hero .text-top {
+        text-align: center;
+    }
+    section.hero .list-wrapper > .list {
+        gap: 1rem;
+    }
+    section.hero .title br, section.hero .title > span br,
+    section.hero .tooltip p br {
+        display: none;
+    }
+    section.hero .tooltip p {
+        font-size: 1.1rem;
+    }
+    section.hero .tooltip {
+        width: 90%;
+    }
+    section.hero .list-wrapper > .list > .item {
+        gap: .75rem;
+        padding: .75rem 1.5rem;
+    }
+    section.hero a {
+        width: 100%;
+        font-size: 1.25rem;
+        margin-top: -10rem;
+    }
+    section.hero > .bottom-content .author {
+        width: fit-content;
+        margin: 1.5rem auto 0 auto;
+    }
+    section.hero .title, section.hero .title > span {
+        font-size: 2.49rem;
+    }
+    section.tariffs {
+        background-image: url(../assets/images/noise-bg.png), url(../assets/images/noise-bg.png), url(../assets/images/noise-bg.png), url(../video/images/form-bg.png);
+        background-position: top, bottom, center;
+        background-repeat: no-repeat;
+        background-size: 125% 33.3%, 125% 33.3%, 125% 33.3%, 150% 100%;
+    }
+    section.tariffs > .content {
+        flex-direction: column;
+        gap: 5rem;
+    }
+    section.tariffs > .content > .item {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 13px;
+    }
+    section.form, section.hero, section.tariffs {
+        padding-left: 7.5%;
+        padding-right: 7.5%;
+    }
+    section.hero a {
+        font-size: 1.1rem;
+    }
+    .form-card__cta {
+        font-size: .9rem;
+    }
+    section.hero .title, section.hero .title > span {
+        font-size: 2.1rem;
+    }
+    section.hero .list-wrapper > .list > .item p {
+        font-size: 1rem;
+    }
+    section.hero .list-wrapper > .list {
+        gap: .75rem;
+    }
+    section.hero .tooltip p {
+        font-size: 1rem;
+    }
+    section.hero .text-top {
+        font-size: 1.25rem;
+    }
+    .form-card__input-wrap.tel::before {
+        left: 10px;
+    }
+    section.tariffs > .content > .item {
+        width: 100%;
+        margin: auto;
+    }
+    section.tariffs .item > .list > .list-item .text {
+        font-size: 1rem;
+    }
+    section.tariffs .item .extra > .text {
+        font-size: 1.05rem;
+    }
+    section.tariffs .item > .info > div:first-child > div:last-child,
+    section.tariffs .item > .info > div:last-child {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    section.form, section.hero, section.tariffs {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    section.hero a {
+        font-size: 1.25rem;
+    }
+    section.hero a {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    section.hero .title, section.hero .title > span {
+        font-size: 1.9rem;
+    }
+    section.tariffs .item > .list > .list-item .text {
+        font-size: .9rem;
+    }
+    section.tariffs .item .extra > .text {
+        font-size: .95rem;
+    }
+    section.tariffs .item > .info > div:first-child > div:last-child,
+    section.tariffs .item > .info > div:last-child {
+        font-size: .9rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    section.form, section.hero, section.tariffs {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    html {
+        font-size: 12px;
+    }
+    section.form > .content .left .tooltip p, section.form > .content .left .tooltip p span {
+        font-size: 1.2rem;
+    }
+    section.hero a {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+@media only screen and (max-width: 380px) {
+    html {
+        font-size: 11px;
+    }
+
+}
