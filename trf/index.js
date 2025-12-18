@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data.result === "success") {
                     fbq('track', 'Lead');
 
-                    const baseUrl = "https://t.me/+O6rRHbF6Yy42ZjBi";
-                    const startParam = "";
+                    const baseUrl = "https://t.me/vladushakovai_bot";
+                    const startParam = "68e7f499c8c35c6d210788fe";
 
                     const getVal = name =>
                         encodeURIComponent(form.querySelector(`input[name="${name}"]`)?.value || "");
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const nameValue = nameField ? encodeURIComponent(nameField.value.trim()) : "";
 
                     const tgUrl =
-                        `${baseUrl}?` +
+                        `${baseUrl}?start=${startParam}` +
                         `&eid=${Date.now()}`+
                         `name=${nameValue}` +
                         `&phone=${encodeURIComponent(normalizedPhone)}` +
