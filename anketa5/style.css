@@ -63,11 +63,11 @@ span,
 section.hero {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding: 4rem 5rem 3rem 2.5rem;
     background-image:
             url("../assets/images/noise-bg.png"),
-            url("../assets/images/author-reg.png"),
+            url("images/author-reg.png"),
             url("../assets/images/graffity-bg.webp"),
             url("../assets/images/blur-bg.webp");
     background-repeat: no-repeat;
@@ -87,7 +87,7 @@ section.hero .title > span {
     text-transform: uppercase;
 }
 section.hero .title {
-    font-size: 2.35rem;
+    font-size: 2.4rem;
 }
 section.hero .tooltip {
     display: flex;
@@ -368,22 +368,124 @@ section.tariffs > .title {
     font-family: 'Benzin Family', sans-serif;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 2rem;
 }
 section.tariffs > .content {
     display: flex;
     gap: 3rem;
     width: 100%;
 }
+
 section.tariffs > .content > .item {
     width: calc(33% - 1.5rem);
     display: flex;
     flex-direction: column;
     background: #202020;
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
     gap: 1rem;
     border-radius: 16px;
     position: relative;
+}
+section.tariffs > .content > .item .price-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+section.tariffs > .content > .item .price-wrapper > div {
+    font-size: 2rem;
+    font-family: 'Benzin Family', sans-serif;
+}
+section.tariffs > .content > .item .price-wrapper > div:first-child {
+    color: #B1B1B1;
+    position: relative;
+}
+section.tariffs > .subtitle {
+    font-family: 'Benzin Family', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: -2rem;
+    padding: 0 3rem;
+    animation: subtitlePulseGlow 2s ease-in-out infinite;
+    color: #FFE500;
+}
+@keyframes subtitlePulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 0 0 0 rgba(255, 229, 0, 0);
+    }
+    50% {
+        transform: scale(1.03);
+        opacity: 0.95;
+        text-shadow: 0 0 10px rgba(255, 229, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        text-shadow: 0 0 0 rgba(255, 229, 0, 0);
+    }
+}
+#fixed-timer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: .25rem;
+
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    align-items: center;
+    color: #FFE500;
+
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+}
+#fixed-timer .inner {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    background: #202020;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+/* 👇 visible state */
+#fixed-timer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#fixed-timer span {
+    font-size: 1.5rem;
+    font-family: 'Benzin Family', sans-serif;
+}
+#fixed-timer span:nth-child(odd) {
+    width: 3rem;
+}
+
+section.tariffs > .content > .item .price-wrapper > div:first-child::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    width: 110%;
+    height: .25rem;
+    background: rgb(149, 147, 147);
+    transform: translate(-50%, -50%) rotate(5deg);
+    transform-origin: center;
+}
+section.tariffs > .content > .item > .item-title {
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5rem;
 }
 section.tariffs > .content > .item .abs {
     position: absolute;
@@ -701,6 +803,9 @@ section.tariffs .item button img {
     section.form, section.hero, section.tariffs {
         padding-left: 7.5%;
         padding-right: 7.5%;
+    }
+    section.form {
+        padding-bottom: 5rem;
     }
     section.hero a {
         font-size: 1.1rem;
