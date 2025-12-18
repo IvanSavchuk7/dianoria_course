@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fbq('track', 'Lead');
 
                     const baseUrl = "https://t.me/vladushakovai_bot";
-                    const startParam = "68e7f499c8c35c6d210788fe";
+                    const startParam = "69440d169492d7f4fc003e1a";
 
                     const getVal = name =>
                         encodeURIComponent(form.querySelector(`input[name="${name}"]`)?.value || "");
