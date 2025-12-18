@@ -103,8 +103,9 @@ section.hero .tooltip > .img-wrapper {
     height: fit-content;
 }
 section.hero .tooltip p {
-    font-size: 1.25rem;
-    color: #B1B1B1;
+    font-size: 1.35rem;
+    color: #FFE500;
+    animation: subtitlePulseGlow 2s ease-in-out infinite;
 }
 section.hero .list-wrapper {
     display: flex;
