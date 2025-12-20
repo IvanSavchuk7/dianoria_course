@@ -73,10 +73,17 @@ section.hero .content > .header-wrapper {
     justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    align-items: center;
 }
 section.hero .content > .header-wrapper img {
     height: 2rem;
     width: auto;
+}
+section.hero .content > .header-wrapper p {
+    font-family: 'Benzin Family', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding-top: .5rem;
 }
 section.hero .content > .title,
 section.hero .content > .title span {
@@ -685,6 +692,10 @@ section.author .content  > .right .partners .wrapper img {
     section.hero {
         padding: 3rem 1rem;
     }
+    section.hero .content > .header-wrapper img {
+        height: 2.5rem;
+        width: auto;
+    }
     section.hero .content .info-wrapper .left > .item p {
         font-size: .9rem;
     }
@@ -706,9 +717,6 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.hero .content > .title, section.hero .content > .title span {
         font-size: 2.5rem;
-    }
-    section.hero .content > .header-wrapper img {
-        height: 1.5rem;
     }
     section.hero .content > .header-wrapper {
         margin-bottom: 1rem;
@@ -889,6 +897,9 @@ section.author .content  > .right .partners .wrapper img {
     section.hero .content > .header-wrapper img {
         height: 1.5rem;
     }
+    section.hero .content > .header-wrapper p {
+        font-size: 1.5rem;
+    }
     section.hero .tooltip {
         font-size: 1rem;
     }
@@ -1053,6 +1064,9 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.author .content > .left .list {
         width: 100%;
+    }
+    section.hero .content > .title, section.hero .content > .title span {
+        font-size: 1.5rem;
     }
 }
 @media only screen and (max-width: 420px) {
