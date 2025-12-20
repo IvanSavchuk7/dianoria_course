@@ -83,7 +83,6 @@ section.hero .content > .header-wrapper p {
     font-family: 'Benzin Family', sans-serif;
     font-size: 2rem;
     text-transform: uppercase;
-    padding-top: .5rem;
 }
 section.hero .content > .title,
 section.hero .content > .title span {
@@ -1055,6 +1054,9 @@ section.author .content  > .right .partners .wrapper img {
 @media only screen and (max-width: 480px) {
     html {
         font-size: 16px;
+    }
+    section.hero .content > .header-wrapper img {
+        height: 1.75rem;
     }
     section.offer > .content .right.mobile {
         width: 100%;
