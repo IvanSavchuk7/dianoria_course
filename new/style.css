@@ -79,6 +79,11 @@ section.hero .content > .header-wrapper img {
     height: 2rem;
     width: auto;
 }
+section.hero a {
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+}
 section.hero .content > .header-wrapper p {
     font-family: 'Benzin Family', sans-serif;
     font-size: 2rem;
