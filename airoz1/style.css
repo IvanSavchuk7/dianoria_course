@@ -1087,6 +1087,10 @@ section.author .content  > .right .partners .wrapper img {
     section.hero .content > .title, section.hero .content > .title span {
         font-size: 1.5rem;
     }
+    section.hero .content .info-wrapper .right p,
+    section.hero .content .info-wrapper .right p span {
+        font-size: .9rem;
+    }
 }
 @media only screen and (max-width: 420px) {
     html {
@@ -1097,6 +1101,10 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.author .content > .left .list {
         padding-right: 1.5rem;
+    }
+    section.hero .content .info-wrapper .right p,
+    section.hero .content .info-wrapper .right p span {
+        font-size: .95rem;
     }
 }
 @media only screen and (max-width: 370px) {
