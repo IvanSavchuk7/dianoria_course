@@ -110,8 +110,8 @@ section.hero .right .author-text.right {
     font-size: .75rem;
     font-weight: 600;
     z-index: 5;
-    right: 8.25%;
-    bottom: 70%;
+    right: 10.25%;
+    bottom: 65%;
     transform: rotate(-4.357deg);
     padding: .5rem 1rem .5rem 3rem;
     text-align: end;
@@ -238,11 +238,15 @@ section.hero .author > .name {
 }
 
 section.form {
-    padding: 5rem 8rem 5rem 5rem;
+    padding: 1rem 8rem 3rem 8rem;
     background-image: url('../assets/images/noise-bg.png'), url("../video/images/form-bg.png");
     background-position: center, center;
     background-repeat: no-repeat;
     background-size: 100% 100%, 100% 100%;
+}
+section.feedback a {
+    width: fit-content;
+    margin: 2rem auto 0 auto;
 }
 section.form > .content {
     display: flex;
@@ -433,7 +437,7 @@ section.tariffs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     padding: 4rem;
     background-image: url('../assets/images/noise-bg.png'), url("../video/images/form-bg.png");
     background-position: top, bottom, center;
@@ -449,7 +453,6 @@ section.tariffs > .title {
 section.tariffs > .subtitle {
     font-family: 'Benzin Family', sans-serif;
     font-size: 1.25rem;
-    margin-bottom: 2rem;
     text-align: center;
     margin-top: -2rem;
     padding: 0 3rem;
@@ -480,7 +483,6 @@ section.tariffs > .content {
     padding: 2.5rem;
     border-radius: 16px;
     background: #202020;
-    margin: -2rem 4rem 0 4rem;
 }
 section.tariffs > .content > .title {
     display: flex;
@@ -488,13 +490,16 @@ section.tariffs > .content > .title {
 }
 section.tariffs > .content > .title div:first-child {
     color: #FFFFFF;
-    font-size: 1.5rem;
+    font-size: 2.25rem;
+    font-family: 'Benzin Family', sans-serif;
+    text-transform: uppercase;
+    line-height: 130%;
     text-align: center;
     font-weight: 600;
 }
 section.tariffs > .content > .title div:last-child {
-    font-size: 1rem;
-    color: #FFFFFF;
+    font-size: 1.5rem;
+    color: #FFE500;
     text-align: center;
 }
 section.tariffs > .content > .inner {
@@ -563,7 +568,6 @@ section.tariffs > .content .item .price .old-price:before {
     height: 4px;
     background: #B1B1B1;
     content: '';
-
 }
 #fixed-timer {
     display: flex;
@@ -571,7 +575,6 @@ section.tariffs > .content .item .price .old-price:before {
     bottom: 0;
     z-index: 9999;
     width: 100%;
-    margin-top: 2rem;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 1.5rem;
@@ -627,11 +630,11 @@ section.form > .offer .inner .text span {
 section.form .inner .bonus-wrapper{
     display: flex;
     gap: 1.5rem;
-    padding: 1.5rem 2rem 1.5rem 10rem;
+    padding: 1.5rem 2rem 1.5rem 7.5rem;
     border-radius: 20px;
     background-color: rgba(175, 175, 175, 0.08);
     backdrop-filter: blur(45px);
-    background-image: url("../assets/images/bonus-img.png");
+    background-image: url("images/gift-icon.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center left;
@@ -647,7 +650,7 @@ section.form .inner .bonus-wrapper > div > div {
 }
 section.form .inner .bonus-wrapper > div > p:last-child {
     color: #B1B1B1;
-    font-size: 1rem;
+    font-size: .95rem;
 }
 section.form .inner .bonus-wrapper > div > p:first-child {
     font-size: 1.1rem;
@@ -761,6 +764,75 @@ section.author .content  > .right .partners .wrapper img {
     height: 1.7rem;
     width: auto;
 }
+section.feedback {
+    padding: 2rem 4rem;
+    background-image: url("../assets/images/noise-bg.png"), url("../assets/images/feedback-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%;
+}
+section.feedback .content,
+section.results .content{
+    position: relative;
+}
+section.feedback .feedback-swiper,
+section.results .results-swiper {
+    width: calc(100% - 5rem);
+    position: initial;
+}
+section.feedback .feedback-swiper .swiper-slide,
+section.results .results-swiper .swiper-slide {
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    border: 1px solid #575757;
+    background: rgba(175, 175, 175, 0.08);
+    backdrop-filter: blur(45px);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-backface-hidden .swiper-slide {
+    transition: all .7s ease;
+}
+.feedback-swiper .swiper-slide img,
+.results-swiper .swiper-slide img {
+    max-width: 100%;
+}
+.swiper-slide.swiper-slide-active {
+    transition: all .7s ease;
+    opacity: 1 !important;
+}
+.feedback-swiper .swiper-button-next,.feedback-swiper .swiper-button-prev,
+.results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background: #FFE500;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: -1rem !important;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: -1rem !important;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    color: black;
+    content: none !important;
+}
+.swiper-button-next svg, .swiper-button-prev svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+section.feedback > .title {
+    font-size: 2.8rem;
+    font-family: 'Benzin Family', sans-serif;
+    font-weight: 700;
+    line-height: 118%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
         font-size: 24px;
@@ -770,7 +842,11 @@ section.author .content  > .right .partners .wrapper img {
     section.form,
     section.author {
         padding-left: 10%;
-        padding-right: 5%;
+        padding-right: 10%;
+    }
+    section.feedback {
+        padding-left: 20%;
+        padding-right: 20%;
     }
 
     section.form > .content > .left {
@@ -778,6 +854,13 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.form > .content > .right {
         flex: 4;
+    }
+    section.hero > .right img {
+        width: 75%;
+    }
+    section.hero .right .author-text.right {
+        right: 22.25%;
+        bottom: 62%;
     }
 }
 @media only screen and (min-width: 1921px) and (max-width: 2559px) {
@@ -791,44 +874,177 @@ section.author .content  > .right .partners .wrapper img {
         padding-left: 5%;
         padding-right: 5%;
     }
+    section.feedback {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
     section.form > .content > .left {
         flex: 5;
     }
     section.form > .content > .right {
         flex: 4;
+    }
+    section.hero > .right img {
+        width: 75%;
+    }
+    section.hero .right .author-text.right {
+        right: 26.25%;
+        bottom: 62%;
+    }
+}
+@media only screen and (min-width: 2151px) and (max-width: 2400px) {
+    section.hero .right .author-text.right {
+        right: 24.25%;
+        bottom: 62%;
+    }
+}
+@media only screen and (min-width: 1921px) and (max-width: 2150px) {
+    section.hero .right .author-text.right {
+        right: 20.25%;
+        bottom: 67%;
     }
 }
 @media only screen and (min-width: 1441px) and (max-width: 1920px) {
     html {
         font-size: 18px;
     }
-
+    section.hero .right .author-text.right {
+        right: 12%;
+        bottom: 64%;
+        font-size: .85rem;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1680px) {
+    section.hero .right .author-text.right {
+        right: 7%;
+        bottom: 62%;
+    }
+}
+@media only screen and (min-width: 1240px) and (max-width: 1920px) {
+    section.tariffs > .content > .inner {
+        gap: 1.5rem;
+    }
+    section.tariffs > .content > .inner .item {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    section.tariffs > .content .item .price .new-price, section.tariffs > .content .item .price .old-price {
+        font-size: 1.25rem;
+    }
+    section.tariffs > .content .item .name {
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
 }
 @media only screen and (min-width: 830px) and (max-width: 1440px) {
     html {
         font-size: 18px;
     }
+    section.form {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
     section.form > .content > .left {
         flex: 5;
     }
     section.form > .content > .right {
-        flex: 4;
+        flex: 5;
+    }
+    section.form .inner .bonus-wrapper {
+        padding-left: 8rem;
+        padding-right: 1.5rem;
     }
     section.form > .content .left .tooltip p, section.form > .content .left .tooltip p span {
-        font-size: 1rem;
+        font-size: .9rem;
+    }
+    section.form .inner .bonus-wrapper > div > p:last-child {
+        font-size: .9rem;
     }
     section.author .content > .left .list > .item div {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    section.hero .title {
+        font-size: 2rem;
+    }
+    section.hero > .right {
+        flex: 3;
+    }
+    section.hero > .left {
+        flex: 4;
+    }
+
+}
+@media only screen and (min-width: 1240px) and (max-width: 1440px) {
+    section.hero .title,
+    section.hero .title span {
+        font-size: 1.8rem;
+    }
+    section.hero > .right img {
+        width: 85%;
+    }
+    section.hero > .left {
+        padding-top: 3rem;
+    }
+    section.tariffs > .title {
+        font-size: 3rem;
     }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1239px) {
     html {
         font-size: 14px;
     }
+
+    section.hero > .right img {
+        width: 70%;
+    }
+    section.hero .right .author-text.right {
+        right: 27.25%;
+        bottom: 62%;
+    }
+    .feedback-swiper .swiper-button-next, .feedback-swiper .swiper-button-prev, .results-swiper .swiper-button-next, .results-swiper .swiper-button-prev {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1125px) {
+    section.hero .right .author-text.right {
+        right: 24.25%;
+        bottom: 66%;
+    }
 }
 @media only screen and (min-width: 830px) and (max-width: 1239px) {
     html {
-        font-size: 11px;
+        font-size: 13px;
+    }
+    section.hero > .left {
+        padding-top: 2rem;
+        gap: 1.25rem;
+    }
+    section.hero .right .author-text.right {
+        right: 4.25%;
+        bottom: 68%;
+    }
+    section.tariffs > .content {
+        padding: 1.5rem;
+    }
+    section.tariffs > .content > .inner .item {
+        gap: 1rem;
+        padding: 1rem;
+    }
+    section.tariffs > .title {
+        font-size: 2.5rem;
+    }
+    section.tariffs > .content .item .price .new-price, section.tariffs > .content .item .price .old-price, section.tariffs > .content .item .name {
+        font-size: 1.25rem;
+    }
+    section.author .content > .left .list > .item div {
+        font-size: .9rem;
+    }
+    section.tariffs > .content .item .text .description {
+        font-size: .75rem;
+    }
+    section.tariffs > .content .item .name {
+        padding: 1rem;
     }
     a svg {
         width: 2rem;
@@ -838,8 +1054,11 @@ section.author .content  > .right .partners .wrapper img {
         width: 2.5rem;
         height: 2.5rem;
     }
+    section.author .content > .left .list {
+        gap: .75rem;
+    }
     section.form {
-        padding: 5rem 5rem 5rem 5rem;
+        padding: 2rem 3rem;
     }
     section.form .title {
         font-size: 3rem;
@@ -853,12 +1072,35 @@ section.author .content  > .right .partners .wrapper img {
     section.tariffs > .content > .inner {
         gap: 1rem;
     }
+    section.hero .title,
+    section.hero .title > span {
+        font-size: 1.8rem;
+    }
+    section.hero > .right p,
+    section.hero .list-wrapper > .list > .item p {
+        font-size: .9rem;
+    }
+    section.hero .tooltip p {
+        font-size: 1.1rem;
+    }
+    section.hero .list-wrapper > .list > .item svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1024px) {
+    section.hero .title, section.hero .title > span {
+        font-size: 1.7rem;
+    }
 }
 @media only screen and (max-width: 829px) {
     html {
         font-size: 14px;
     }
-    section.form, section.hero, section.author {
+    section.tariffs > .title {
+        font-size: 2.5rem;
+    }
+    section.form, section.hero, section.author, section.feedback {
         padding-left: 10%;
         padding-right: 10%;
     }
@@ -870,6 +1112,10 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.form > .content .left {
         margin-top: 0;
+        width: 100%;
+    }
+    section.form .inner .bonus-wrapper {
+        padding-left: 8rem;
     }
     section.form .left .tooltip {
         margin-top: -4rem;
@@ -979,7 +1225,7 @@ section.author .content  > .right .partners .wrapper img {
     }
     section.tariffs > .content {
         flex-direction: column;
-        gap: 2rem;
+        gap: 0;
     }
     section.tariffs > .content > .item {
         width: 80%;
@@ -1002,9 +1248,16 @@ section.author .content  > .right .partners .wrapper img {
     section.tariffs > .content > .inner {
         flex-direction: column;
         margin-top: 0;
+        gap: 0;
     }
     section.tariffs > .content > .inner .item .abs {
         top: -10%;
+    }
+    section.form {
+        padding-top: 0;
+    }
+    section.form > .content {
+        gap: 1.5rem;
     }
 }
 @media only screen and (max-width: 700px) {
@@ -1027,7 +1280,7 @@ section.author .content  > .right .partners .wrapper img {
     section.tariffs > .content > .item .price-wrapper > div {
         font-size: 2rem;
     }
-    section.form, section.hero, section.tariffs {
+    section.form, section.hero, section.tariffs, section.feedback {
         padding-left: 7.5%;
         padding-right: 7.5%;
     }
@@ -1116,7 +1369,7 @@ section.author .content  > .right .partners .wrapper img {
 }
 
 @media only screen and (max-width: 480px) {
-    section.form, section.hero, section.tariffs, section.author {
+    section.form, section.hero, section.tariffs, section.author, section.feedback {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
@@ -1170,6 +1423,9 @@ section.author .content  > .right .partners .wrapper img {
         font-size: 1rem;
         border: none;
         bottom: -10px;
+    }
+    section.hero > .right img {
+        margin-top: -2rem;
     }
 }
 @media only screen and (max-width: 440px) {
