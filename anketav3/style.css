@@ -77,6 +77,7 @@ section.hero > .left {
     gap: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex: 3;
 }
 section.hero > .right {
@@ -1176,8 +1177,8 @@ section.feedback > .title {
     section.hero .list-wrapper > .list {
         gap: 1rem;
     }
-    section.hero .title br, section.hero .title > span br,
-    section.hero .tooltip p br {
+    section.hero .title br:not(.mobile), section.hero .title > span br:not(.mobile),
+    section.hero .tooltip p br:not(.mobile) {
         display: none;
     }
     section.hero a.mobile {
@@ -1200,7 +1201,7 @@ section.feedback > .title {
         width: 90%;
     }
     section.hero > .right img {
-        width: 80%;
+        width: 65%;
         margin: -3rem auto 0 auto;
         display: block;
     }
@@ -1292,8 +1293,8 @@ section.feedback > .title {
         font-size: 2rem;
     }
     section.form, section.hero, section.tariffs, section.feedback {
-        padding-left: 7.5%;
-        padding-right: 7.5%;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     section.form {
         padding-bottom: 5rem;
@@ -1331,7 +1332,7 @@ section.feedback > .title {
         font-size: 1.5rem;
     }
     section.hero .title, section.hero .title > span {
-        font-size: 2.1rem;
+        font-size: 1.6rem;
     }
     section.hero .list-wrapper > .list > .item p {
         font-size: 1rem;
@@ -1340,7 +1341,7 @@ section.feedback > .title {
         gap: .75rem;
     }
     section.hero .tooltip p {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     section.hero .text-top {
         font-size: 1.25rem;
@@ -1363,36 +1364,86 @@ section.feedback > .title {
         font-size: 1rem;
     }
     section.hero .tooltip > .img-wrapper svg {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     section.hero .right .author-text.right {
-        right: 6.25%;
+        right: 11.25%;
         bottom: 68%;
         font-size: .9rem;
+    }
+    section.tariffs {
+        padding-top: 1rem;
+    }
+    section.hero {
+        padding-bottom: 2rem;
+    }
+    section.tariffs > .content {
+        padding: 1.25rem;
+    }
+    section.tariffs > .content > .inner .item {
+        margin-top:3rem;
+    }
+    section.tariffs > .content > .title div:last-child {
+        font-size: 1.25rem;
+    }
+    section.feedback .feedback-swiper {
+        width: 80%;
+        margin-bottom: 3rem;
+    }
+    section.feedback .feedback-swiper .swiper-slide {
+        padding: 1rem;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        top: calc(100% + 4rem) !important;
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+    }
+    section.feedback .swiper-button-prev,
+    section.results .swiper-button-prev {
+        left: calc(50% - 4rem) !important;
+    }
+    section.feedback .swiper-button-next,
+    section.results .swiper-button-next  {
+        right: calc(50% - 4rem) !important;
+    }
+    section.feedback a {
+        margin-top: 8rem;
+        width: 80%;
     }
 }
 @media only screen and (max-width: 520px) {
     section.hero .right .author-text.right {
-        right: 2.25%;
-        bottom: 69%;
+        right: 6.25%;
+        bottom: 70%;
     }
 }
 
 @media only screen and (max-width: 480px) {
     section.form, section.hero, section.tariffs, section.author, section.feedback {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     section.hero a {
         font-size: 1.25rem;
     }
     section.hero a {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding:.5rem 1.5rem;
+        width: 100%;
+    }
+    section.hero a.mobile svg {
+        width: 35px;
+        height: 35px;
+    }
+    section.hero .right .author-text.right {
+        right: 4.5%;
+        bottom: 70%;
+    }
+    section.hero header {
+        font-size: 1rem;
     }
     section.hero .title, section.hero .title > span {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
     }
     section.tariffs .item > .list > .list-item .text {
         font-size: .9rem;
@@ -1415,28 +1466,60 @@ section.feedback > .title {
         height: 10px;
     }
     section.hero > .right img {
-        width: 65%;
+        width: 60%;
     }
     section.hero .right .author-text.right {
         font-size: .9rem;
     }
     section.hero > .left {
-        gap: 1.25rem;
+        gap: .5rem;
     }
     section.hero .tooltip p {
-        font-size: 1.05rem;
+        font-size: .95rem;
     }
     section.hero .tooltip > .img-wrapper svg {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2rem;
+        height: 2rem;
     }
     section.hero > .right p {
-        font-size: 1rem;
+        width: 100%;
+        font-size: .9rem;
         border: none;
         bottom: -10px;
     }
     section.hero > .right img {
         margin-top: -2rem;
+    }
+    section.hero .accent {
+        font-size: 1.25rem;
+        margin: 1rem auto;
+    }
+    section.tariffs > .title,
+    section.feedback > .title {
+        font-size: 2rem;
+    }
+    section.tariffs > .subtitle {
+        font-size: 1rem;
+        margin-top: -.5rem;
+    }
+    section.tariffs, section.form {
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    #fixed-timer .inner {
+        padding: .5rem 2rem;
+    }
+    .form-card {
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+    }
+    section.form .inner .bonus-wrapper {
+        padding: 1rem 1rem 1rem 5.5rem;
+    }
+    section.form .inner .bonus-wrapper > div > p:last-child {
+        font-size: .9rem;
+    }
+    section.form .inner .text {
+        font-size: 1.3rem;
     }
 }
 @media only screen and (max-width: 440px) {
@@ -1460,9 +1543,17 @@ section.feedback > .title {
     section.author .content > .left .name {
         font-size: 2.25rem;
     }
-
+    section.form .inner .text {
+        font-size: 1.2rem;
+    }
+    section.form .inner .bonus-wrapper {
+        padding: 1rem 1rem 1rem 6rem;
+    }
+    section.form .inner .bonus-wrapper > div > p:last-child {
+         font-size: .9rem;
+     }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 390px) {
     html {
         font-size: 11px;
     }
