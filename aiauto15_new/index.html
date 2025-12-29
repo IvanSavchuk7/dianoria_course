@@ -36,6 +36,10 @@
     <meta name="msapplication-square310x310logo" content="../assets/mstile-310x310.png" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.14/bundle/libphonenumber-js.min.js" defer></script>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <script src="index.js" defer></script>
     <!-- Meta Pixel Code -->
     <script>
@@ -67,54 +71,9 @@
     <main>
         <section class="hero">
             <div class="content">
-                <div class="header-wrapper">
-                    <img src="images/hero-icon.png" alt="">
-                    <p>Влад Ушаков</p>
-                </div>
                 <div class="title">
                     15 AI-автоматизацій, <br><br class="mobile">
                     <span>які змінюють правила <br>гри у 2026</span>
-                </div>
-                <div class="info-wrapper">
-                    <div class="left">
-                        <div class="item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.01998 5L0 3.81196L1.48884 1.18804L3.51 2.37402L3.51114 0H6.48886L6.49 2.37402L8.51114 1.18804L10 3.81196L7.98 5L10 6.18804L8.51114 8.81196L6.49 7.62598L6.48886 10H3.51114L3.51 7.62598L1.48884 8.81196L0 6.18804L2.01998 5Z" fill="#FFE500"/>
-                            </svg>
-                            <p>Маркетинг</p>
-                        </div>
-                        <div class="item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.01998 5L0 3.81196L1.48884 1.18804L3.51 2.37402L3.51114 0H6.48886L6.49 2.37402L8.51114 1.18804L10 3.81196L7.98 5L10 6.18804L8.51114 8.81196L6.49 7.62598L6.48886 10H3.51114L3.51 7.62598L1.48884 8.81196L0 6.18804L2.01998 5Z" fill="#FFE500"/>
-                            </svg>
-                            <p>Продажі і бізнес процеси</p>
-                        </div>
-                        <div class="item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.01998 5L0 3.81196L1.48884 1.18804L3.51 2.37402L3.51114 0H6.48886L6.49 2.37402L8.51114 1.18804L10 3.81196L7.98 5L10 6.18804L8.51114 8.81196L6.49 7.62598L6.48886 10H3.51114L3.51 7.62598L1.48884 8.81196L0 6.18804L2.01998 5Z" fill="#FFE500"/>
-                            </svg>
-                            <p>Контент</p>
-                        </div>
-                        <div class="item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.01998 5L0 3.81196L1.48884 1.18804L3.51 2.37402L3.51114 0H6.48886L6.49 2.37402L8.51114 1.18804L10 3.81196L7.98 5L10 6.18804L8.51114 8.81196L6.49 7.62598L6.48886 10H3.51114L3.51 7.62598L1.48884 8.81196L0 6.18804L2.01998 5Z" fill="#FFE500"/>
-                            </svg>
-                            <p>Аналітика</p>
-                        </div>
-                        <div class="item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.01998 5L0 3.81196L1.48884 1.18804L3.51 2.37402L3.51114 0H6.48886L6.49 2.37402L8.51114 1.18804L10 3.81196L7.98 5L10 6.18804L8.51114 8.81196L6.49 7.62598L6.48886 10H3.51114L3.51 7.62598L1.48884 8.81196L0 6.18804L2.01998 5Z" fill="#FFE500"/>
-                            </svg>
-                            <p>Рутина</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <img src="images/folder-img.png" alt="">
-                        <p>
-                            <span>Реальні сценарії,</span> які вже <br>
-                            впроваджують і отримують результат
-                        </p>
-                    </div>
                 </div>
             </div>
             <div class="video-wrapper">
@@ -133,29 +92,6 @@
             <div class="tooltip">
                 За 30 хвилин ви побачите 15 готових AI-сценаріїв,  що саме робить кожна <br>
                 автоматизація, де вона дає ефект і як обрати сценарій під вашу ціль
-            </div>
-            <a href="#form">
-                заповнити анкету
-            </a>
-        </section>
-        <section class="offer">
-            <div class="content">
-                <div class="left">
-                    <div class="title">
-                        Навіть одна <br><br class="mobile">правильно <br class="mobile">
-                        підібрана <br>АІ-<br class="mobile">автоматизація <br class="mobile">може
-                        <br>дати <span>+30% <br class="mobile">покращення <br><br class="mobile">показників за <br class="mobile">місяць</span>
-                        <img src="images/floating-item-1.png" alt="" class="abs">
-                        <img src="images/floating-item-2.png" alt="" class="abs">
-                        <img src="images/floating-item-3.png" alt="" class="abs">
-                    </div>
-                    <div class="tooltip">
-                        І поки більшість тільки придивляється, ви можете спокійно <br>
-                        розібратися й забрати перевагу в швидкості та системності.
-                    </div>
-                </div>
-                <img src="images/gpt-big-image.png" alt="" class="right">
-                <img src="images/gpt-big-image-mobile.png" alt="" class="right mobile">
             </div>
         </section>
         <section class="form">
@@ -200,14 +136,93 @@
                             <div class="bonus-wrapper">
                                 <img src="images/bonus-image.png" alt="">
                                 <p>
-                                    Заповни анкету та отримай бонус <br>
-                                    <span>150 промтів ChatGPT для життя <br>та роботи</span>
+                                    Заповни та отримай <span>150 промтів <br>для роботи з chatGPT</span>
                                 </p>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="offer">
+            <div class="content">
+                <div class="left">
+                    <div class="title">
+                        Навіть одна <br><br class="mobile">правильно <br class="mobile">
+                        підібрана <br>АІ-<br class="mobile">автоматизація <br class="mobile">може
+                        <br>дати <span>+30% <br class="mobile">покращення <br><br class="mobile">показників за <br class="mobile">місяць</span>
+                        <img src="images/floating-item-1.png" alt="" class="abs">
+                        <img src="images/floating-item-2.png" alt="" class="abs">
+                        <img src="images/floating-item-3.png" alt="" class="abs">
+                    </div>
+                    <div class="tooltip">
+                        І поки більшість тільки придивляється, ви можете спокійно <br>
+                        розібратися й забрати перевагу в швидкості та системності.
+                    </div>
+                </div>
+                <img src="images/gpt-big-image.png" alt="" class="right">
+                <img src="images/gpt-big-image-mobile.png" alt="" class="right mobile">
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="title">
+                відгуки студентів
+            </div>
+            <div class="content">
+                <div class="swiper feedback-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="name font-size-sm font-weight-semibold"><img src="../assets/images/feedback-1.webp" alt="feedback-image"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="name font-size-sm font-weight-semibold"><img src="../assets/images/feedback-2.webp" alt="feedback-image"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="name font-size-sm font-weight-semibold"><img src="../assets/images/feedback-3.webp" alt="feedback-image"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="name font-size-sm font-weight-semibold"><img src="../assets/images/feedback-4.png" alt="feedback-image"></div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="name font-size-sm font-weight-semibold"><img src="../assets/images/feedback-5.png" alt="feedback-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-navigation">
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M3.86593 16H27.8659" stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M11.8659 24L3.86589 16L11.8659 8" stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M28 16H4" stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 8L28 16L20 24" stroke="#181818" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#form">
+                забронювати місце
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M20 2.33301C29.7568 2.33318 37.6658 10.2432 37.666 20C37.6658 29.7568 29.7568 37.6658 20 37.666C10.2432 37.6658 2.33318 29.7568 2.33301 20C2.33318 10.2432 10.2432 2.33318 20 2.33301ZM20.6367 11.8564C20.0509 11.2707 19.1014 11.2707 18.5156 11.8564C17.9301 12.4423 17.9299 13.3918 18.5156 13.9775L23.4551 18.917H12.0762C11.2479 18.9171 10.5762 19.5886 10.5762 20.417C10.5763 21.2452 11.248 21.9169 12.0762 21.917H23.4551L18.5156 26.8564C17.9301 27.4423 17.9299 28.3918 18.5156 28.9775C19.1013 29.5632 20.0509 29.563 20.6367 28.9775L28.1367 21.4775C28.4179 21.1963 28.5761 20.8147 28.5762 20.417C28.5762 20.0192 28.418 19.6377 28.1367 19.3564L20.6367 11.8564Z" fill="#181818"></path>
+                </svg>
+            </a>
         </section>
         <section class="author">
             <div class="content">
@@ -271,5 +286,8 @@
             </div>
         </section>
     </main>
+    <script src="https://player.vimeo.com/api/player.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>

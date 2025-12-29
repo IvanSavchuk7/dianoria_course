@@ -1,3 +1,37 @@
+var swiper1 = new Swiper(".feedback-swiper", {
+    slidesPerView: 1,
+    lazy: true,
+    autoHeight: false,
+    spaceBetween: 20,
+    mousewheel: false,
+    direction: 'horizontal',
+    loop: true,
+
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        601: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1080: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+        },
+        1560: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            mousewheel: false,
+        },
+    }
+});
+
 function isObviouslyFakeNumber(num) {
     const digits = num.replace(/\D/g, "");
     if (/^(\d)\1{5,}$/.test(digits)) return true;
@@ -114,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData(form);
 
             await fetch(
-                "https://script.google.com/macros/s/AKfycbwpakXtp9LQTUH2L9nhlrR6IIb2O3_9Ia9XGGfD4_B7QgooQPzIwlCQGoLkfEFdppq7Sw/exec",
+                "https://script.google.com/macros/s/AKfycbzEIPaZwnJDTe4UUp2FPmM_Czsy-Jou3evkZD3SA7Zb35JWFR24K5T96X_3C6wcDE2f/exec",
                 {
                     method: "POST",
                     body: formData
@@ -129,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const baseUrl = "https://t.me/vladushakovai_bot";
-        const startParam = "69465b93f5c12fd74209f654";
+        const startParam = "694594ab2d96711ae80d4014";
 
         const getUTM = key => encodeURIComponent(localStorage.getItem(key) || "");
 

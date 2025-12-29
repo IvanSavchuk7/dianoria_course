@@ -38,21 +38,39 @@ function validatePhone(rawPhone) {
 }
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("form");
+    if (!form) return;
+
     const phoneInput = form.querySelector('input[name="Телефон"]');
     const phoneError = document.getElementById("phone-error");
+    const submitBtn = document.getElementById("submit-btn-1");
+
+    const UTM_KEYS = ["utm_source", "utm_campaign", "utm_content", "utm_term"];
 
     const urlParams = new URLSearchParams(window.location.search);
-    ["utm_source", "utm_campaign", "utm_content", "utm_term"].forEach(param => {
-        const value = urlParams.get(param);
+
+    UTM_KEYS.forEach(key => {
+        const value = urlParams.get(key);
         if (value) {
-            const hiddenInput = document.querySelector(`input[name="${param}"]`);
-            if (hiddenInput) hiddenInput.value = value;
+            localStorage.setItem(key, value);
         }
     });
 
-    form.addEventListener("submit", function (e) {
+    UTM_KEYS.forEach(key => {
+        const storedValue = localStorage.getItem(key);
+        const hiddenInput = form.querySelector(`input[name="${key}"]`);
+        if (hiddenInput && storedValue) {
+            hiddenInput.value = storedValue;
+        }
+    });
+
+    form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
+        /* --- block double submit --- */
+        if (form.dataset.submitted === "true") return;
+        form.dataset.submitted = "true";
+
+        /* --- phone validation --- */
         const rawPhone = phoneInput.value.trim();
         const phoneObj = validatePhone(rawPhone);
         const digits = rawPhone.replace(/\D/g, "");
@@ -60,15 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!phoneObj || isObviouslyFakeNumber(digits)) {
             phoneError.style.opacity = "1";
             phoneInput.classList.add("input-error");
+            form.dataset.submitted = "false";
             return;
         }
 
-        phoneError.style.display = "none";
+        phoneError.style.opacity = "0";
         phoneInput.classList.remove("input-error");
 
         const normalizedPhone = phoneObj.number;
         phoneInput.value = normalizedPhone;
+
         const eid = Date.now();
+
         let eidField = form.querySelector('input[name="eid"]');
         if (!eidField) {
             eidField = document.createElement("input");
@@ -77,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             form.appendChild(eidField);
         }
         eidField.value = eid;
+
         let phoneSendpulse = form.querySelector('input[name="Телефон sendpulse"]');
         if (!phoneSendpulse) {
             phoneSendpulse = document.createElement("input");
@@ -86,43 +108,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         phoneSendpulse.value = normalizedPhone;
 
-        const submitBtn = document.getElementById("submit-btn-1");
         submitBtn.disabled = true;
 
-        const formData = new FormData(form);
+        try {
+            const formData = new FormData(form);
 
-        fetch("https://script.google.com/macros/s/AKfycbxk-8uFdbovzD4Z9sh9OAi3lhIyVNLqL8QayUPWNDM4SxPUuBsGaCWrcTGd-AS4RQBi/exec", {
-            method: "POST",
-            body: formData
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === "success") {
-                    fbq('track', 'Lead');
-
-                    const baseUrl = "https://t.me/vladushakovai_bot";
-                    const startParam = "694594ab2d96711ae80d4014";
-
-                    const getVal = name =>
-                        encodeURIComponent(form.querySelector(`input[name="${name}"]`)?.value || "");
-
-
-                    const nameField = form.querySelector('input[name="Ім\'я"]');
-                    const nameValue = nameField ? encodeURIComponent(nameField.value.trim()) : "";
-
-                    const tgUrl =
-                        `${baseUrl}?start=${startParam}` +
-                        `&eid=${Date.now()}`+
-                        `name=${nameValue}` +
-                        `&phone=${encodeURIComponent(normalizedPhone)}` +
-                        `&utm_source=${getVal("utm_source")}` +
-                        `&utm_campaign=${getVal("utm_campaign")}` +
-                        `&utm_content=${getVal("utm_content")}` +
-                        `&utm_term=${getVal("utm_term")}`;
-
-                    setTimeout(() => window.location.href = tgUrl, 10);
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbzEIPaZwnJDTe4UUp2FPmM_Czsy-Jou3evkZD3SA7Zb35JWFR24K5T96X_3C6wcDE2f/exec",
+                {
+                    method: "POST",
+                    body: formData
                 }
-            });
+            );
+        } catch (err) {
+            console.error("Google Sheet error:", err);
+        }
+
+        if (typeof fbq === "function") {
+            fbq("track", "Lead", {}, { eventID: eid });
+        }
+
+        const baseUrl = "https://t.me/vladushakovai_bot";
+        const startParam = "694594ab2d96711ae80d4014";
+
+        const getUTM = key => encodeURIComponent(localStorage.getItem(key) || "");
+
+        const nameValue = encodeURIComponent(
+            form.querySelector('input[name="Ім\'я"]')?.value.trim() || ""
+        );
+
+        const tgUrl =
+            `${baseUrl}?start=${startParam}` +
+            `&eid=${eid}` +
+            `&name=${nameValue}` +
+            `&phone=${encodeURIComponent(normalizedPhone)}` +
+            `&utm_source=${getUTM("utm_source")}` +
+            `&utm_campaign=${getUTM("utm_campaign")}` +
+            `&utm_content=${getUTM("utm_content")}` +
+            `&utm_term=${getUTM("utm_term")}`;
+
+        setTimeout(() => {
+            window.location.href = tgUrl;
+        }, 50);
     });
 });
 
