@@ -226,7 +226,6 @@ section.form .bonus-wrapper .abs {
     width: 25%;
     height: 24px;
     top: -24px;
-    background: #FFFFFF;
 }
 section.hero .accent .abs-2 {
     position: absolute;
@@ -1602,7 +1601,7 @@ section.feedback > .title {
         font-size: .9rem;
     }
     section.author .content > .right .partners .wrapper img {
-        height: 1.75rem;
+        height: 2.25rem;
     }
     section.hero .list-wrapper > .list > .item svg {
         width: 10px;
@@ -1655,7 +1654,6 @@ section.feedback > .title {
         width: 30%;
         height: 20px;
         top: -20px;
-        background: #FFFFFF;
     }
     section.form .inner .bonus-wrapper {
         padding: 1rem 1rem 1rem 5.5rem;
@@ -1683,6 +1681,9 @@ section.feedback > .title {
         padding-left: 10px;
         padding-right: 10px;
     }
+    section.author .content > .right .partners .wrapper img {
+        height: 2.25rem;
+    }
     html {
         font-size: 12px;
     }
@@ -1705,6 +1706,9 @@ section.feedback > .title {
     section.form .inner .bonus-wrapper > div > p:last-child {
          font-size: .9rem;
      }
+    section.author .content > .right .partners .text {
+        font-size: 1.3rem;
+    }
 }
 @media only screen and (max-width: 390px) {
     html {
