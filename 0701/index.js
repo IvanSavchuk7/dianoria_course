@@ -163,8 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
             fbq("track", "Lead", {}, { eventID: eid });
         }
 
-        const baseUrl = "https://t.me/vladushakovai_bot";
-        const startParam = "694594ab2d96711ae80d4014";
+        const baseUrl = "https://t.me/+O6rRHbF6Yy42ZjBi";
+        const startParam = "";
 
         const getUTM = key => encodeURIComponent(localStorage.getItem(key) || "");
 

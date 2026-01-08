@@ -1117,6 +1117,16 @@ section.author .content  > .right .partners .wrapper img {
     section.hero a {
         padding: 1rem;
     }
+    .video-wrapper .play-btn {
+        width: 4rem;
+        padding: .5rem 1rem;
+        border-radius: 8px;
+    }
+    .video-wrapper .play-btn img {
+        width: 1rem;
+        height: auto;
+        min-width: 1rem;
+    }
 }
 @media only screen and (max-width: 600px) {
     html {
